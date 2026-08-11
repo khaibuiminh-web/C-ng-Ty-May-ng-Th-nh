@@ -423,6 +423,32 @@ p { color: var(--color-secondary); }
 .breadcrumb a:hover { color: #fff; }
 .breadcrumb svg { width: 14px; height: 14px; }
 
+/* ----------------------- Preloader ------------------------------- */
+.preloader {
+  position: fixed; inset: 0; z-index: 2000; display: grid; place-items: center;
+  background: radial-gradient(700px 380px at 50% 40%, rgba(3,105,161,.35), transparent 65%), linear-gradient(150deg, #0b1220, #0f172a 55%, #111c33);
+  transition: opacity .5s var(--ease), visibility .5s;
+}
+.preloader.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.preloader__inner { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.preloader__logo { width: 96px; height: auto; animation: plPulse 1.6s ease-in-out infinite; }
+.preloader__bar { width: 150px; height: 3px; border-radius: 3px; background: rgba(255,255,255,.14); overflow: hidden; position: relative; }
+.preloader__bar::before { content: ""; position: absolute; inset: 0; width: 40%; background: linear-gradient(90deg, transparent, #7dd3fc, transparent); border-radius: 3px; animation: plBar 1.15s ease-in-out infinite; }
+@keyframes plPulse { 0%, 100% { transform: scale(1); opacity: .88; } 50% { transform: scale(1.07); opacity: 1; } }
+@keyframes plBar { 0% { transform: translateX(-120%); } 100% { transform: translateX(320%); } }
+
+/* Hero entrance (chỉ trang chủ) */
+@media (prefers-reduced-motion: no-preference) {
+  .hero__content > * { animation: heroIn .7s var(--ease) both; }
+  .hero__content > .eyebrow { animation-delay: .15s; }
+  .hero__content > h1 { animation-delay: .26s; }
+  .hero__content > .hero__lead { animation-delay: .4s; }
+  .hero__content > .hero__cta { animation-delay: .54s; }
+  .hero__content > .hero__stats { animation-delay: .68s; }
+  @keyframes heroIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+}
+@media (prefers-reduced-motion: reduce) { .preloader { display: none; } }
+
 /* ----------------------- Scroll reveal --------------------------- */
 [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
 [data-reveal].is-in { opacity: 1; transform: none; }

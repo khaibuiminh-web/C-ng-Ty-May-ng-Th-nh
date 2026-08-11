@@ -270,6 +270,24 @@
     nums.forEach(function (n) { io.observe(n); });
   }
 
+  /* ============================= Preloader =========================== */
+  function initPreloader() {
+    var pl = document.getElementById('preloader');
+    if (!pl) return;
+    var done = false;
+    function hide() {
+      if (done) return; done = true;
+      pl.classList.add('is-hidden');
+      setTimeout(function () { if (pl.parentNode) pl.parentNode.removeChild(pl); }, 600);
+    }
+    if (document.readyState === 'complete') {
+      setTimeout(hide, 250);
+    } else {
+      window.addEventListener('load', function () { setTimeout(hide, 250); });
+      setTimeout(hide, 1600); // giới hạn: luôn ẩn sau tối đa 1.6s
+    }
+  }
+
   /* ============================== Lightbox =========================== */
   function initLightbox() {
     var thumbs = document.querySelectorAll('.cert-thumb');
@@ -371,6 +389,7 @@
 
   /* ============================== Init =============================== */
   function init() {
+    initPreloader();
     buildHeader();
     buildFooter();
     buildFloaters();
