@@ -270,6 +270,48 @@
     nums.forEach(function (n) { io.observe(n); });
   }
 
+  /* ============================== Lightbox =========================== */
+  function initLightbox() {
+    var thumbs = document.querySelectorAll('.cert-thumb');
+    if (!thumbs.length) return;
+
+    var box = document.createElement('div');
+    box.className = 'lightbox';
+    box.innerHTML =
+      '<button class="lightbox__close" aria-label="Đóng">&times;</button>' +
+      '<img alt="">' +
+      '<div class="lightbox__cap"></div>';
+    document.body.appendChild(box);
+    var bimg = box.querySelector('img');
+    var bcap = box.querySelector('.lightbox__cap');
+
+    function open(src, cap) {
+      bimg.src = src; bimg.alt = cap || '';
+      bcap.textContent = cap || '';
+      box.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function close() {
+      box.classList.remove('is-open');
+      document.body.style.overflow = '';
+      bimg.src = '';
+    }
+
+    thumbs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        var img = t.querySelector('img');
+        var cap = t.getAttribute('data-cap') || (t.querySelector('figcaption') ? t.querySelector('figcaption').textContent : '');
+        if (img) open(img.getAttribute('src'), cap);
+      });
+    });
+    box.addEventListener('click', function (e) {
+      if (e.target === box || e.target.classList.contains('lightbox__close')) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') close();
+    });
+  }
+
   /* ============================ Contact form ========================= */
   function initContactForm() {
     var form = document.getElementById('contact-form');
@@ -336,6 +378,7 @@
     initInteractions();
     initReveal();
     initCounters();
+    initLightbox();
     initContactForm();
   }
 
