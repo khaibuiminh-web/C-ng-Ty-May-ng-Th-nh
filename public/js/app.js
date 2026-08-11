@@ -15,7 +15,7 @@
     phone: '0255.3829.714',
     phoneRaw: '02553829714',
     zalo: '02553829714',
-    email: 'info@dongthanh.com.vn',
+    email: 'dongthanhqng@gmail.com',
     tax: '4300269721',
     since: '1984',
     addressVi: '32 Lê Văn Sỹ, Phường Trần Phú, TP. Quảng Ngãi, Tỉnh Quảng Ngãi',
@@ -164,7 +164,7 @@
               '<li>' + icon(I.pin) + '<span data-en="' + CO.addressEn + '">' + CO.addressVi + '</span></li>' +
               '<li>' + icon(I.phone) + '<a href="tel:' + CO.phoneRaw + '">' + CO.phone + '</a></li>' +
               '<li>' + icon(I.mail) + '<a href="mailto:' + CO.email + '">' + CO.email + '</a></li>' +
-              '<li>' + icon(I.clock) + '<span data-en="Mon–Sat: 7:30 – 17:00">Thứ 2–7: 7:30 – 17:00</span></li>' +
+              '<li>' + icon(I.clock) + '<span data-en="Mon–Sat: 7:30 – 16:30">Thứ 2–7: 7:30 – 16:30</span></li>' +
             '</ul>' +
           '</div>' +
         '</div>' +
