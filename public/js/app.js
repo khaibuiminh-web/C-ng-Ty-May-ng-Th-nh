@@ -37,9 +37,9 @@
     hotline: { vi: 'Hotline', en: 'Hotline' }
   };
 
-  // Logo thật (dạng vector). Thay 2 file assets/logo.svg + assets/logo-white.svg bằng file gốc để dùng logo chính thức.
-  var LOGO_DARK = '<img class="brand__logo" src="assets/logo.svg" width="59" height="42" alt="Logo May Đông Thành (DOTHEGAMEX)">';
-  var LOGO_WHITE = '<img class="brand__logo" src="assets/logo-white.svg" width="56" height="40" alt="Logo May Đông Thành (DOTHEGAMEX)">';
+  // Logo thật của công ty (file gốc PNG, nền trong suốt). logo.png = bản navy (nền sáng), logo-white.png = bản trắng (nền tối).
+  var LOGO_DARK = '<img class="brand__logo" src="assets/logo.png" alt="Logo May Đông Thành (DOTHEGAMEX)">';
+  var LOGO_WHITE = '<img class="brand__logo" src="assets/logo-white.png" alt="Logo May Đông Thành (DOTHEGAMEX)">';
 
   /* ============================ i18n ================================= */
   var LANG_KEY = 'dt_lang';
