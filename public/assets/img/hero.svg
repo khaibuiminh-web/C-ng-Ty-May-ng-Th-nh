@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" role="img" aria-label="Xưởng may Đông Thành">
+  <defs>
+    <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#123054"/><stop offset="1" stop-color="#0b1220"/>
+    </linearGradient>
+    <linearGradient id="hf" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e3a5f"/><stop offset="1" stop-color="#0f2440"/>
+    </linearGradient>
+    <pattern id="stitch" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+      <path d="M0 13h9M13 13h9" stroke="#2a4a72" stroke-width="1.5" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+  <rect width="720" height="560" fill="url(#hg)"/>
+  <rect width="720" height="560" fill="url(#stitch)" opacity=".6"/>
+  <!-- floor -->
+  <rect y="410" width="720" height="150" fill="#0a1424"/>
+  <!-- sewing tables/machines silhouettes -->
+  <g fill="url(#hf)" stroke="#3b6ea5" stroke-width="2">
+    <rect x="70" y="300" width="150" height="120" rx="8"/>
+    <rect x="285" y="300" width="150" height="120" rx="8"/>
+    <rect x="500" y="300" width="150" height="120" rx="8"/>
+  </g>
+  <!-- machine heads -->
+  <g fill="#0369A1">
+    <path d="M95 300v-42a16 16 0 0 1 16-16h70a16 16 0 0 1 16 16v42Z"/>
+    <path d="M310 300v-42a16 16 0 0 1 16-16h70a16 16 0 0 1 16 16v42Z"/>
+    <path d="M525 300v-42a16 16 0 0 1 16-16h70a16 16 0 0 1 16 16v42Z"/>
+  </g>
+  <g fill="#7dd3fc">
+    <circle cx="185" cy="268" r="6"/><circle cx="400" cy="268" r="6"/><circle cx="615" cy="268" r="6"/>
+  </g>
+  <!-- thread cones -->
+  <g fill="#C99A2E"><path d="M120 242l10-40 10 40z"/><path d="M335 242l10-40 10 40z"/><path d="M550 242l10-40 10 40z"/></g>
+  <!-- hanging fabric bolts -->
+  <g opacity=".9">
+    <rect x="70" y="70" width="34" height="150" rx="6" fill="#0369A1"/>
+    <rect x="120" y="70" width="34" height="120" rx="6" fill="#1e88c7"/>
+    <rect x="170" y="70" width="34" height="160" rx="6" fill="#155e8a"/>
+  </g>
+  <text x="360" y="500" text-anchor="middle" font-family="Poppins, sans-serif" font-size="26" font-weight="700" fill="#e2e8f0">DÂY CHUYỀN MAY ĐÔNG THÀNH</text>
+  <text x="360" y="528" text-anchor="middle" font-family="Open Sans, sans-serif" font-size="13" fill="#7dd3fc" letter-spacing="2">ẢNH MINH HỌA · THAY BẰNG ẢNH NHÀ MÁY THẬT</text>
+</svg>

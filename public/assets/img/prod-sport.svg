@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Trang phục thể thao">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0e7490"/><stop offset="1" stop-color="#0b2f4a"/></linearGradient>
+    <pattern id="s" width="24" height="24" patternUnits="userSpaceOnUse" patternTransform="rotate(20)"><path d="M0 12h8M12 12h8" stroke="#ffffff" stroke-opacity=".12" stroke-width="1.5" stroke-linecap="round"/></pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#s)"/>
+  <g stroke="#ffffff" stroke-width="3" fill="none" stroke-linejoin="round" stroke-linecap="round" transform="translate(400 260)">
+    <path d="M-64 -54l34-16 30 20 30-20 34 16 18 34-30 16v90h-104v-90l-30-16z"/>
+    <path d="M-30 -70l30 18 30-18"/>
+    <path d="M0 -8v70M-22 62l22-16 22 16" stroke-width="2.4"/>
+  </g>
+  <text x="400" y="500" text-anchor="middle" font-family="Poppins, sans-serif" font-size="14" fill="#dbeafe" letter-spacing="2">ẢNH MINH HỌA</text>
+</svg>

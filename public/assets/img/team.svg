@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Đội ngũ Đông Thành">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#16365c"/><stop offset="1" stop-color="#0b1220"/></linearGradient>
+    <pattern id="s" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(20)"><path d="M0 13h9M13 13h9" stroke="#284c76" stroke-width="1.5" stroke-linecap="round"/></pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/><rect width="800" height="600" fill="url(#s)" opacity=".55"/>
+  <g stroke="#7dd3fc" stroke-width="3" fill="none" stroke-linecap="round" transform="translate(400 250)">
+    <circle cx="-70" cy="-15" r="26"/><path d="M-112 60v-14a42 42 0 0 1 84 0v14"/>
+    <circle cx="70" cy="-15" r="26"/><path d="M28 60v-14a42 42 0 0 1 84 0v14"/>
+    <circle cx="0" cy="-30" r="32" fill="#0b1220"/><path d="M-52 66v-16a52 52 0 0 1 104 0v16" fill="#0b1220"/>
+  </g>
+  <text x="400" y="470" text-anchor="middle" font-family="Poppins, sans-serif" font-size="30" font-weight="700" fill="#e2e8f0">ĐỘI NGŨ ĐÔNG THÀNH</text>
+  <text x="400" y="502" text-anchor="middle" font-family="Open Sans, sans-serif" font-size="14" fill="#7dd3fc" letter-spacing="2">ẢNH MINH HỌA · THAY BẰNG ẢNH THẬT</text>
+</svg>
