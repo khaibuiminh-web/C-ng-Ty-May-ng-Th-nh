@@ -151,6 +151,7 @@
             '<h4 data-en="Company">Công ty</h4>' +
             '<ul class="footer-links">' +
               '<li><span style="color:#94a3b8" data-en="Tax code">Mã số thuế</span>: ' + CO.tax + '</li>' +
+              '<li><span style="color:#94a3b8" data-en="Main line">Ngành chính</span>: ' + '<span data-en="Made-up textiles (excl. apparel)">Sản xuất hàng dệt sẵn (trừ trang phục)</span></li>' +
               '<li><span style="color:#94a3b8" data-en="Heritage">Bề dày</span>: ' + '<span data-en="40+ years (since 1984)">Hơn 40 năm (từ 1984)</span></li>' +
               '<li><span style="color:#94a3b8" data-en="Strategic partner">Đối tác chiến lược</span>: NOA GROUP</li>' +
               '<li><a href="capabilities.html" data-en="OEM / ODM Services">Dịch vụ OEM / ODM</a></li>' +
