@@ -37,12 +37,9 @@
     hotline: { vi: 'Hotline', en: 'Hotline' }
   };
 
-  var LOGO_SVG =
-    '<svg class="brand__logo" viewBox="0 0 48 48" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">' +
-    '<rect width="48" height="48" rx="11" fill="#0F172A"/>' +
-    '<path d="M13 34V14h8.2c6.1 0 10 3.8 10 10s-3.9 10-10 10H13Z" fill="#0369A1"/>' +
-    '<path d="M18.5 29V19h2.4c3.1 0 5 1.9 5 5s-1.9 5-5 5h-2.4Z" fill="#fff"/>' +
-    '<circle cx="34" cy="16" r="2.4" fill="#C99A2E"/></svg>';
+  // Logo thật (dạng vector). Thay 2 file assets/logo.svg + assets/logo-white.svg bằng file gốc để dùng logo chính thức.
+  var LOGO_DARK = '<img class="brand__logo" src="assets/logo.svg" width="59" height="42" alt="Logo May Đông Thành (DOTHEGAMEX)">';
+  var LOGO_WHITE = '<img class="brand__logo" src="assets/logo-white.svg" width="56" height="40" alt="Logo May Đông Thành (DOTHEGAMEX)">';
 
   /* ============================ i18n ================================= */
   var LANG_KEY = 'dt_lang';
@@ -94,7 +91,7 @@
       '<div class="container">' +
         '<nav class="nav" aria-label="Chính">' +
           '<a class="brand" href="index.html" aria-label="' + CO.brand + ' — ' + CO.tag + '">' +
-            LOGO_SVG +
+            LOGO_DARK +
             '<span><span class="brand__name">' + CO.brand + '</span>' +
             '<span class="brand__tag">' + CO.tag + '</span></span>' +
           '</a>' +
@@ -139,7 +136,7 @@
       '<div class="container">' +
         '<div class="footer-grid">' +
           '<div class="footer-brand">' +
-            '<a class="brand" href="index.html">' + LOGO_SVG +
+            '<a class="brand" href="index.html">' + LOGO_WHITE +
               '<span><span class="brand__name">' + CO.brand + '</span><span class="brand__tag">' + CO.tag + '</span></span>' +
             '</a>' +
             '<p class="footer-about" data-en="Garment manufacturer with 40+ years of heritage (since 1984) in Quang Ngai — strategic partner of NOA GROUP, reliable for domestic and export markets.">' +
