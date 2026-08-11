@@ -466,6 +466,25 @@ p { color: var(--color-secondary); }
   .org-branch:first-child { margin-bottom: 0; }
 }
 
+/* ------------------------- Export markets ------------------------ */
+.markets { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.market {
+  display: inline-flex; align-items: center; gap: 9px; padding: 11px 20px; border-radius: var(--radius-full);
+  font-family: var(--font-heading); font-weight: 600; font-size: .95rem;
+  background: var(--color-surface); border: 1.5px solid var(--color-border); color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  transition: transform .2s var(--ease), border-color .2s, box-shadow .2s, background .2s;
+}
+.market svg { width: 18px; height: 18px; flex: none; color: var(--color-accent); }
+.market:hover { transform: translateY(-3px); border-color: var(--color-accent); box-shadow: var(--shadow); }
+.bg-primary .market { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); color: #fff; box-shadow: none; }
+.bg-primary .market svg { color: #7dd3fc; }
+.bg-primary .market:hover { background: rgba(255,255,255,.12); border-color: #7dd3fc; }
+.bg-primary .section-head h2 { color: #fff; }
+.bg-primary .section-head p { color: #cbd5e1; }
+.bg-primary .eyebrow { color: #7dd3fc; }
+.bg-primary .eyebrow::before { background: #7dd3fc; }
+
 /* --------------------------- Responsive -------------------------- */
 @media (max-width: 1024px) {
   .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--space-6); }
