@@ -17,7 +17,7 @@
     zalo: '02553829714',
     email: 'info@dongthanh.com.vn',
     tax: '4300269721',
-    since: '1999',
+    since: '1984',
     addressVi: '32 Lê Văn Sỹ, Phường Trần Phú, TP. Quảng Ngãi, Tỉnh Quảng Ngãi',
     addressEn: '32 Le Van Sy St., Tran Phu Ward, Quang Ngai City, Quang Ngai Province, Vietnam'
   };
@@ -142,8 +142,8 @@
             '<a class="brand" href="index.html">' + LOGO_SVG +
               '<span><span class="brand__name">' + CO.brand + '</span><span class="brand__tag">' + CO.tag + '</span></span>' +
             '</a>' +
-            '<p class="footer-about" data-en="Garment manufacturer with 25+ years of experience in Quang Ngai — reliable OEM/ODM partner for domestic and export markets.">' +
-              'Doanh nghiệp may mặc hơn 25 năm kinh nghiệm tại Quảng Ngãi — đối tác OEM/ODM tin cậy cho thị trường trong nước và xuất khẩu.' +
+            '<p class="footer-about" data-en="Garment manufacturer with 40+ years of heritage (since 1984) in Quang Ngai — strategic partner of NOA GROUP, reliable for domestic and export markets.">' +
+              'Doanh nghiệp may mặc với hơn 40 năm bề dày (từ 1984) tại Quảng Ngãi — đối tác chiến lược của NOA GROUP, tin cậy cho thị trường trong nước và xuất khẩu.' +
             '</p>' +
           '</div>' +
           '<div class="footer">' +
@@ -154,7 +154,8 @@
             '<h4 data-en="Company">Công ty</h4>' +
             '<ul class="footer-links">' +
               '<li><span style="color:#94a3b8" data-en="Tax code">Mã số thuế</span>: ' + CO.tax + '</li>' +
-              '<li><span style="color:#94a3b8" data-en="Established">Thành lập</span>: 07/04/' + CO.since + '</li>' +
+              '<li><span style="color:#94a3b8" data-en="Heritage">Bề dày</span>: ' + '<span data-en="40+ years (since 1984)">Hơn 40 năm (từ 1984)</span></li>' +
+              '<li><span style="color:#94a3b8" data-en="Strategic partner">Đối tác chiến lược</span>: NOA GROUP</li>' +
               '<li><a href="capabilities.html" data-en="OEM / ODM Services">Dịch vụ OEM / ODM</a></li>' +
               '<li><a href="careers.html" data-en="Recruitment">Tuyển dụng</a></li>' +
             '</ul>' +
