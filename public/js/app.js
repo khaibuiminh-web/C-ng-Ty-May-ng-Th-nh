@@ -291,7 +291,7 @@
 
   /* ============================== Lightbox =========================== */
   function initLightbox() {
-    var thumbs = document.querySelectorAll('.cert-thumb');
+    var thumbs = document.querySelectorAll('.cert-thumb, .hero__card img, .media-frame img');
     if (!thumbs.length) return;
 
     var box = document.createElement('div');
@@ -317,10 +317,16 @@
     }
 
     thumbs.forEach(function (t) {
+      t.style.cursor = 'zoom-in';
       t.addEventListener('click', function () {
-        var img = t.querySelector('img');
-        var cap = t.getAttribute('data-cap') || (t.querySelector('figcaption') ? t.querySelector('figcaption').textContent : '');
-        if (img) open(img.getAttribute('src'), cap);
+        var img = t.tagName === 'IMG' ? t : t.querySelector('img');
+        if (!img) return;
+        var cap = t.getAttribute('data-cap');
+        if (!cap) {
+          var fc = t.querySelector && t.querySelector('figcaption');
+          cap = fc ? fc.textContent : (img.getAttribute('alt') || '');
+        }
+        open(img.getAttribute('src'), cap);
       });
     });
     box.addEventListener('click', function (e) {
