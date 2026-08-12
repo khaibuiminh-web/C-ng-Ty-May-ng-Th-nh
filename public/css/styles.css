@@ -438,18 +438,15 @@ p { color: var(--color-secondary); }
 /* Page hero (inner pages) */
 .page-hero { position: relative; color: #e2e8f0; padding-block: calc(var(--space-8) + 12px) var(--space-8);
   background: radial-gradient(800px 400px at 90% -20%, rgba(3,105,161,.45), transparent 60%), linear-gradient(150deg, #0b1220, #0f172a); }
-/* Cover có ảnh (dùng lớp phủ navy như hero để đồng nhất) */
-.page-hero--photo {
-  background:
-    linear-gradient(90deg, rgba(11,18,32,.93) 0%, rgba(15,23,42,.80) 55%, rgba(15,23,42,.58) 100%),
-    var(--cover) center / cover no-repeat;
+/* Cover có ảnh (ảnh đặt qua inline background-image; lớp phủ navy ở ::before) */
+.page-hero--photo { position: relative; background-size: cover; background-position: center; background-repeat: no-repeat; }
+.page-hero--photo::before {
+  content: ""; position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(90deg, rgba(11,18,32,.93) 0%, rgba(15,23,42,.80) 55%, rgba(15,23,42,.58) 100%);
 }
+.page-hero--photo > .container { position: relative; z-index: 1; }
 @media (max-width: 768px) {
-  .page-hero--photo {
-    background:
-      linear-gradient(180deg, rgba(11,18,32,.90) 0%, rgba(15,23,42,.82) 100%),
-      var(--cover) center / cover no-repeat;
-  }
+  .page-hero--photo::before { background: linear-gradient(180deg, rgba(11,18,32,.90) 0%, rgba(15,23,42,.82) 100%); }
 }
 .page-hero h1 { color: #fff; }
 .page-hero p { color: #cbd5e1; margin-top: var(--space-3); max-width: 60ch; font-size: 1.08rem; }
@@ -666,7 +663,9 @@ p { color: var(--color-secondary); }
 @media print {
   .preloader, .site-header, .site-footer, .floaters, .breadcrumb, [onclick] { display: none !important; }
   .bg-primary, .page-hero, .cta-band, .wrap-feature { background: #fff !important; }
-  .bg-primary, .bg-primary *, .cta-band, .cta-band *, .wrap-feature, .wrap-feature * { color: #111 !important; }
+  .page-hero--photo { background-image: none !important; }
+  .page-hero--photo::before { display: none !important; }
+  .bg-primary, .bg-primary *, .cta-band, .cta-band *, .wrap-feature, .wrap-feature *, .page-hero, .page-hero * { color: #111 !important; }
   .wrap-badge { border: 1px solid #999 !important; }
   .wrap-badge svg, .wrap-badge b, .wrap-badge span { color: #0f172a !important; }
   .section { padding-block: 16px !important; }
