@@ -605,7 +605,34 @@ p { color: var(--color-secondary); }
   [data-reveal] { opacity: 1; transform: none; }
 }
 
+/* ----------------------- Company Profile ------------------------- */
+.profile-cover { text-align: center; padding-block: clamp(var(--space-7), 5vw, var(--space-9)); border-bottom: 3px solid var(--color-gold); }
+.profile-cover .brand__logo-lg { height: 66px; width: auto; margin: 0 auto var(--space-4); display: block; }
+.profile-cover h1 { margin-top: var(--space-2); }
+.profile-cover .lead { max-width: 640px; margin: var(--space-4) auto 0; color: var(--color-secondary); font-size: 1.08rem; }
+.profile-cover .hero__cta { justify-content: center; margin-top: var(--space-6); }
+.profile-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); margin-top: var(--space-8); }
+.profile-stat { text-align: center; }
+.profile-stat .num { font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.7rem, 1.1rem + 2vw, 2.7rem); color: var(--color-primary); line-height: 1; }
+.profile-stat .num small { color: var(--color-gold-ink); font-size: .5em; margin-left: 2px; }
+.profile-stat .lbl { color: var(--color-muted-fg); margin-top: 6px; font-size: .9rem; }
+.profile-legal { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--space-7); max-width: 960px; margin-inline: auto; }
+.profile-legal .row { display: flex; gap: var(--space-3); padding: 12px 0; border-bottom: 1px dashed var(--color-border); font-size: .96rem; }
+.profile-legal .row b { flex: 0 0 150px; color: var(--color-primary); font-family: var(--font-heading); font-weight: 600; }
+.profile-legal .row span { color: var(--color-secondary); }
+@media (max-width: 720px) { .profile-legal { grid-template-columns: 1fr; } .profile-stats { grid-template-columns: 1fr 1fr; gap: var(--space-6) var(--space-4); } }
+
 /* --------------------------- Print ------------------------------- */
+@media print {
+  .preloader, .site-header, .site-footer, .floaters, .breadcrumb, [onclick] { display: none !important; }
+  .bg-primary, .page-hero, .cta-band, .wrap-feature { background: #fff !important; }
+  .bg-primary, .bg-primary *, .cta-band, .cta-band *, .wrap-feature, .wrap-feature * { color: #111 !important; }
+  .wrap-badge { border: 1px solid #999 !important; }
+  .wrap-badge svg, .wrap-badge b, .wrap-badge span { color: #0f172a !important; }
+  .section { padding-block: 16px !important; }
+  .card, .prod, .principle, .award-card, .timeline__item, .benefit { break-inside: avoid; }
+  a { color: #111 !important; }
+}
 @media print {
   .site-header, .floaters, .site-footer, .hero__cta, .btn { display: none !important; }
   body { background: #fff; }

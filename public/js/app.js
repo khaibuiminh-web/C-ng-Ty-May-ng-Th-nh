@@ -27,6 +27,7 @@
     { href: 'index.html',        vi: 'Trang chủ',   en: 'Home',          key: 'home' },
     { href: 'about.html',        vi: 'Giới thiệu',  en: 'About Us',      key: 'about' },
     { href: 'capabilities.html', vi: 'Năng lực',    en: 'Capabilities',  key: 'capabilities' },
+    { href: 'profile.html',      vi: 'Hồ sơ năng lực', en: 'Company Profile', key: 'profile' },
     { href: 'careers.html',      vi: 'Tuyển dụng',  en: 'Careers',       key: 'careers' },
     { href: 'contact.html',      vi: 'Liên hệ',     en: 'Contact',       key: 'contact' }
   ];
