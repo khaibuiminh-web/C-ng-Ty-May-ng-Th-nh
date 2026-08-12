@@ -351,7 +351,8 @@ li, figcaption, blockquote { text-wrap: pretty; }
 .prod__body p { color: #cbd5e1; font-size: .9rem; margin-top: 4px; }
 
 /* Certificates */
-.certs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: var(--space-4); }
+.certs { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+@media (max-width: 460px) { .certs { grid-template-columns: 1fr; } }
 .cert { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4) var(--space-5); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
 .cert svg { width: 34px; height: 34px; color: var(--color-accent); flex-shrink: 0; }
 .cert b { font-family: var(--font-heading); font-size: .95rem; color: var(--color-primary); display: block; }
