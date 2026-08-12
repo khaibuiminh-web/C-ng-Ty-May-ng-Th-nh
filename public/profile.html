@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260812213219">
+  <link rel="stylesheet" href="css/styles.css?v=20260812214628">
 </head>
 <body data-page="profile">
   <div class="preloader" id="preloader" role="status" aria-label="Đang tải">
@@ -29,6 +29,8 @@
   <header id="site-header"></header>
 
   <main id="main">
+    <!-- Ảnh banner chỉ hiển thị khi In/Lưu PDF (ảnh nền cover không in được) -->
+    <img class="print-banner" src="assets/img/covers/profile.jpg?v=3" alt="Nhà máy May Đông Thành (DOTHEGAMEX)">
     <!-- ========================= COVER ============================= -->
     <section class="page-hero page-hero--photo" style="background-image:url('assets/img/covers/profile.jpg?v=3')">
       <div class="container">
@@ -89,8 +91,24 @@
       </div>
     </section>
 
-    <!-- ========================= HISTORY =========================== -->
+    <!-- ========================= FACILITY GALLERY ================= -->
     <section class="section bg-surface">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow eyebrow--center" data-en="Our factory">Hình ảnh nhà máy</span>
+          <h2 data-en="Inside our facility">Bên trong nhà xưởng</h2>
+        </div>
+        <div class="cert-gallery" data-reveal>
+          <figure class="cert-thumb"><img src="assets/img/gallery/g1.jpg" alt="Nhà xưởng sản xuất May Đông Thành" loading="lazy"><figcaption data-en="Production floor">Nhà xưởng sản xuất</figcaption></figure>
+          <figure class="cert-thumb"><img src="assets/img/gallery/g3.jpg" alt="Trải và cắt vải tại May Đông Thành" loading="lazy"><figcaption data-en="Cutting">Trải &amp; cắt vải</figcaption></figure>
+          <figure class="cert-thumb"><img src="assets/img/gallery/g4.jpg" alt="Chuyền may tại May Đông Thành" loading="lazy"><figcaption data-en="Sewing line">Chuyền may</figcaption></figure>
+          <figure class="cert-thumb"><img src="assets/img/gallery/g6.jpg" alt="Kiểm tra chất lượng sản phẩm" loading="lazy"><figcaption data-en="Quality inspection">Kiểm tra chất lượng</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= HISTORY =========================== -->
+    <section class="section">
       <div class="container">
         <div class="section-head center" data-reveal>
           <span class="eyebrow eyebrow--center" data-en="History">Lịch sử phát triển</span>
@@ -212,6 +230,6 @@
 
   <footer id="site-footer"></footer>
   <div id="floaters"></div>
-  <script src="js/app.js?v=20260812213219" defer></script>
+  <script src="js/app.js?v=20260812214628" defer></script>
 </body>
 </html>

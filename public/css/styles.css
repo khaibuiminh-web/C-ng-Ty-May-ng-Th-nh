@@ -704,3 +704,21 @@ body[data-page="profile"] .page-hero h1 { line-height: 1.5; }
   .site-header, .floaters, .site-footer, .hero__cta, .btn { display: none !important; }
   body { background: #fff; }
 }
+
+/* Ảnh banner chỉ dành cho bản in/PDF */
+.print-banner { display: none; }
+@media print {
+  /* Buộc trình duyệt in đủ màu & ảnh */
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .print-banner {
+    display: block !important; width: 100%; height: auto; max-height: 250px;
+    object-fit: cover; margin-bottom: 14px; border-radius: 6px; break-inside: avoid;
+  }
+  /* Lưới ảnh nhà máy & sản phẩm gọn cho khổ giấy */
+  .cert-gallery { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; margin-top: 10px !important; }
+  .prod-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+  .cert-thumb, .prod { break-inside: avoid; }
+  .prod { aspect-ratio: 4 / 3; }
+  .prod__body h3, .cert-thumb figcaption { color: #fff !important; }
+  img { max-width: 100% !important; }
+}
