@@ -195,35 +195,6 @@ li, figcaption, blockquote { text-wrap: pretty; }
 .nav__toggle.is-open span::before { transform: rotate(45deg); }
 .nav__toggle.is-open span::after { transform: rotate(-45deg) translateY(-1.5px); }
 
-/* ---------- Header đảo màu theo nền (navy trên vùng sáng) ---------- */
-.site-header { transition: background .35s ease, border-color .3s ease, box-shadow .3s ease; }
-.brand__name, .brand__tag, .nav__link, .lang-toggle, .lang-toggle button,
-.nav__toggle, .nav__toggle span, .nav__toggle span::before, .nav__toggle span::after {
-  transition: color .35s ease, background .35s ease, border-color .35s ease;
-}
-.brand__logo { transition: opacity .3s ease; }
-/* Hai phiên bản logo, đổi theo nền */
-.brand__logo--light { display: none; }
-.site-header.hdr-navy .brand__logo--dark { display: none; }
-.site-header.hdr-navy .brand__logo--light { display: block; }
-
-.site-header.hdr-navy { background: var(--color-primary); }
-.site-header.hdr-navy.is-scrolled { border-color: rgba(255,255,255,.14); box-shadow: 0 6px 22px rgba(2,6,23,.30); }
-.site-header.hdr-navy .brand__name { color: #fff; }
-.site-header.hdr-navy .brand__tag { color: var(--color-gold-light); }
-.site-header.hdr-navy .nav__link { color: #cbd5e1; }
-.site-header.hdr-navy .nav__link:hover { color: #fff; background: rgba(255,255,255,.10); }
-.site-header.hdr-navy .nav__link.is-active { color: #7dd3fc; }
-.site-header.hdr-navy .nav__link.is-active::after { background: #7dd3fc; }
-.site-header.hdr-navy .lang-toggle { border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.06); }
-.site-header.hdr-navy .lang-toggle button { color: #e2e8f0; }
-.site-header.hdr-navy .lang-toggle button.is-active { background: #fff; color: var(--color-primary); }
-.site-header.hdr-navy .nav__toggle { border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.06); }
-.site-header.hdr-navy .nav__toggle span,
-.site-header.hdr-navy .nav__toggle span::before,
-.site-header.hdr-navy .nav__toggle span::after { background: #fff; }
-.site-header.hdr-navy .nav__cta-desktop { box-shadow: 0 0 0 1px rgba(255,255,255,.16); }
-
 /* --------------------------- Hero -------------------------------- */
 .hero {
   position: relative; overflow: hidden; color: #e2e8f0;

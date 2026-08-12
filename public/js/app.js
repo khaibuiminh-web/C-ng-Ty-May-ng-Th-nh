@@ -40,10 +40,6 @@
   // Logo thật của công ty (file gốc PNG, nền trong suốt). logo.png = bản navy (nền sáng), logo-white.png = bản trắng (nền tối).
   var LOGO_DARK = '<img class="brand__logo" src="assets/logo.png" alt="Logo May Đông Thành (DOTHEGAMEX)">';
   var LOGO_WHITE = '<img class="brand__logo" src="assets/logo-white.png" alt="Logo May Đông Thành (DOTHEGAMEX)">';
-  // Header chứa cả 2 logo, CSS đổi hiển thị theo nền (navy/trắng)
-  var LOGO_HEADER =
-    '<img class="brand__logo brand__logo--dark" src="assets/logo.png" alt="Logo May Đông Thành (DOTHEGAMEX)">' +
-    '<img class="brand__logo brand__logo--light" src="assets/logo-white.png" alt="Logo May Đông Thành (DOTHEGAMEX)">';
 
   /* ============================ i18n ================================= */
   var LANG_KEY = 'dt_lang';
@@ -113,7 +109,7 @@
       '<div class="container">' +
         '<nav class="nav" aria-label="Chính">' +
           '<a class="brand" href="index.html" aria-label="' + CO.brand + ' — ' + CO.tag + '">' +
-            LOGO_HEADER +
+            LOGO_DARK +
             '<span><span class="brand__name">' + CO.brand + '</span>' +
             '<span class="brand__tag">' + CO.tag + '</span></span>' +
           '</a>' +
@@ -217,34 +213,14 @@
     var links = document.getElementById('nav-links');
     var toTop = document.getElementById('to-top');
 
-    // Đảo màu header theo nền phía sau (navy trên vùng sáng, trắng trên vùng tối)
-    var DARK_SEL = '.hero--cover, .bg-primary, .page-hero--photo, .cta-band';
-    function updateHeaderTheme() {
-      if (!header) return;
-      var rect = header.getBoundingClientRect();
-      var prevPE = header.style.pointerEvents;
-      header.style.pointerEvents = 'none';
-      var el = document.elementFromPoint(Math.round(window.innerWidth / 2), Math.round(rect.bottom + 4));
-      header.style.pointerEvents = prevPE;
-      var overDark = !!(el && el.closest && el.closest(DARK_SEL));
-      header.classList.toggle('hdr-navy', !overDark);
-    }
-
-    // Sticky shadow + back-to-top + đổi màu header
-    var ticking = false;
+    // Sticky shadow + back-to-top
     function onScroll() {
       var y = window.scrollY;
       if (header) header.classList.toggle('is-scrolled', y > 8);
       if (toTop) toTop.classList.toggle('is-show', y > 500);
-      if (!ticking) {
-        ticking = true;
-        requestAnimationFrame(function () { updateHeaderTheme(); ticking = false; });
-      }
     }
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', updateHeaderTheme, { passive: true });
     onScroll();
-    updateHeaderTheme();
 
     // Mobile menu
     if (toggle && links) {
