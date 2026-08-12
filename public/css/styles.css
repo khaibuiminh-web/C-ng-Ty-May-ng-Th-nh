@@ -143,12 +143,20 @@ li, figcaption, blockquote { text-wrap: pretty; }
   position: sticky; top: 0; z-index: 100;
   background: #ffffff;
   border-bottom: 1px solid transparent;
-  transition: border-color .25s, box-shadow .25s, background .25s;
+  transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .3s ease, border-color .3s ease;
+  will-change: transform;
 }
-.site-header.is-scrolled { border-color: var(--color-border); box-shadow: var(--shadow-sm); }
-.nav { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); gap: var(--space-5); }
+.site-header.is-scrolled { border-color: var(--color-border); box-shadow: 0 8px 26px -10px rgba(15,23,42,.16); }
+/* Tự ẩn khi cuộn xuống, trượt xuống lại khi cuộn lên */
+.site-header.is-hidden { transform: translateY(-100%); }
+.nav { display: flex; align-items: center; justify-content: space-between; height: var(--header-h); gap: var(--space-5); transition: height .3s ease; }
 .brand { display: flex; align-items: center; gap: var(--space-3); flex-shrink: 0; }
-.brand__logo { width: auto; height: 42px; flex-shrink: 0; object-fit: contain; }
+.brand__logo { width: auto; height: 42px; flex-shrink: 0; object-fit: contain; transition: height .3s ease; }
+/* Thu gọn header nhẹ khi cuộn (chỉ desktop để không lệch menu mobile) */
+@media (min-width: 769px) {
+  .site-header.is-scrolled .nav { height: 64px; }
+  .site-header.is-scrolled .brand__logo { height: 36px; }
+}
 .site-footer .brand__logo { height: 40px; }
 .brand__name { font-family: var(--font-heading); font-weight: 700; font-size: 1.06rem; color: var(--color-primary); line-height: 1.1; letter-spacing: -0.01em; }
 .brand__tag { display: block; font-family: var(--font-body); font-weight: 600; font-size: .64rem; letter-spacing: .22em; color: var(--color-accent); }

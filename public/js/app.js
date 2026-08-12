@@ -213,11 +213,19 @@
     var links = document.getElementById('nav-links');
     var toTop = document.getElementById('to-top');
 
-    // Sticky shadow + back-to-top
+    // Sticky shadow + back-to-top + tự ẩn/hiện header khi cuộn
+    var lastY = window.scrollY;
     function onScroll() {
       var y = window.scrollY;
       if (header) header.classList.toggle('is-scrolled', y > 8);
       if (toTop) toTop.classList.toggle('is-show', y > 500);
+      // Ẩn khi cuộn xuống (nhường nội dung), hiện lại ngay khi cuộn lên
+      var menuOpen = links && links.classList.contains('is-open');
+      if (header && !menuOpen) {
+        if (y > 240 && y > lastY + 6) header.classList.add('is-hidden');
+        else if (y < lastY - 6 || y < 160) header.classList.remove('is-hidden');
+      }
+      lastY = y;
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
