@@ -14,7 +14,6 @@
     tag: 'DOTHEGAMEX',
     phone: '0255.3829.714',
     phoneRaw: '02553829714',
-    zalo: '02553829714',
     email: 'dongthanhqng@gmail.com',
     tax: '4300269721',
     since: '1984',
