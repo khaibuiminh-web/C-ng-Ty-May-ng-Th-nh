@@ -429,7 +429,7 @@ li, figcaption, blockquote { text-wrap: pretty; }
 .floater:hover { transform: scale(1.08); }
 .floater svg { width: 26px; height: 26px; }
 .floater--phone { background: #16a34a; }
-.floater--zalo { background: #0068ff; font-family: var(--font-heading); font-weight: 800; font-size: .8rem; }
+.floater--mail { background: var(--color-accent); }
 .floater--top { background: var(--color-primary); opacity: 0; pointer-events: none; transition: opacity .25s, transform .2s; }
 .floater--top.is-show { opacity: 1; pointer-events: auto; }
 .floater::after {

@@ -201,7 +201,7 @@
     host.className = 'floaters';
     host.innerHTML =
       '<a class="floater floater--phone" href="tel:' + CO.phoneRaw + '" data-tip="' + CO.phone + '" aria-label="Gọi hotline">' + icon(I.phone) + '</a>' +
-      '<a class="floater floater--zalo" href="https://zalo.me/' + CO.zalo + '" target="_blank" rel="noopener" data-tip="Chat Zalo" aria-label="Chat Zalo">Zalo</a>' +
+      '<a class="floater floater--mail" href="mailto:' + CO.email + '" data-tip="' + CO.email + '" aria-label="Gửi email">' + icon(I.mail) + '</a>' +
       '<button class="floater floater--top" id="to-top" data-tip="Lên đầu trang" aria-label="Lên đầu trang">' +
         '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>' +
       '</button>';
