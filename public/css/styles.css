@@ -630,9 +630,10 @@ body[data-page="profile"] .page-hero h1 { line-height: 1.5; }
     position: fixed; inset: var(--header-h) 0 auto 0; flex-direction: column; align-items: stretch;
     background: var(--color-surface); padding: var(--space-4); gap: var(--space-1);
     border-bottom: 1px solid var(--color-border); box-shadow: var(--shadow-lg);
-    transform: translateY(-120%); transition: transform .3s var(--ease); max-height: calc(100vh - var(--header-h)); overflow-y: auto;
+    transform: translateY(-120%); visibility: hidden; pointer-events: none;
+    transition: transform .3s var(--ease), visibility 0s linear .3s; max-height: calc(100vh - var(--header-h)); overflow-y: auto;
   }
-  .nav__links.is-open { transform: translateY(0); }
+  .nav__links.is-open { transform: translateY(0); visibility: visible; pointer-events: auto; transition: transform .3s var(--ease), visibility 0s linear 0s; }
   .nav__link { padding: 14px 16px; font-size: 1.05rem; }
   .nav__link.is-active::after { display: none; }
   .nav__toggle { display: inline-flex; }
