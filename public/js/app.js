@@ -291,7 +291,7 @@
 
   /* ============================== Lightbox =========================== */
   function initLightbox() {
-    var thumbs = document.querySelectorAll('.cert-thumb, .hero__card img, .media-frame img');
+    var thumbs = document.querySelectorAll('.cert-thumb, .media-frame img');
     if (!thumbs.length) return;
 
     var box = document.createElement('div');
