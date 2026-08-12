@@ -647,6 +647,19 @@ li, figcaption, blockquote { text-wrap: pretty; }
   .hero__badge { position: static; margin-top: var(--space-4); max-width: none; }
   .stats-band { grid-template-columns: 1fr 1fr; }
   .hero__stats { gap: var(--space-5); }
+  /* Header vừa khít màn hình điện thoại (tránh tràn ngang) */
+  .container { padding-inline: 16px; }
+  .nav { gap: 10px; }
+  .nav__actions { gap: 8px; }
+  .brand { gap: 8px; }
+  .brand__logo { height: 34px; }
+  .brand__name { font-size: .9rem; }
+  .brand__tag { font-size: .56rem; letter-spacing: .14em; }
+  .lang-toggle button { padding: 6px 9px; }
+  /* Nút nổi gọn hơn, không chạm mép */
+  .floaters { right: 14px; bottom: 14px; gap: 10px; }
+  .floater { width: 48px; height: 48px; }
+  .floater svg { width: 22px; height: 22px; }
 }
 
 /* -------------------------- Reduced motion ----------------------- */
