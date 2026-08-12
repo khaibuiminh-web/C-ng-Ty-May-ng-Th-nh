@@ -438,6 +438,19 @@ p { color: var(--color-secondary); }
 /* Page hero (inner pages) */
 .page-hero { position: relative; color: #e2e8f0; padding-block: calc(var(--space-8) + 12px) var(--space-8);
   background: radial-gradient(800px 400px at 90% -20%, rgba(3,105,161,.45), transparent 60%), linear-gradient(150deg, #0b1220, #0f172a); }
+/* Cover có ảnh (dùng lớp phủ navy như hero để đồng nhất) */
+.page-hero--photo {
+  background:
+    linear-gradient(90deg, rgba(11,18,32,.93) 0%, rgba(15,23,42,.80) 55%, rgba(15,23,42,.58) 100%),
+    var(--cover) center / cover no-repeat;
+}
+@media (max-width: 768px) {
+  .page-hero--photo {
+    background:
+      linear-gradient(180deg, rgba(11,18,32,.90) 0%, rgba(15,23,42,.82) 100%),
+      var(--cover) center / cover no-repeat;
+  }
+}
 .page-hero h1 { color: #fff; }
 .page-hero p { color: #cbd5e1; margin-top: var(--space-3); max-width: 60ch; font-size: 1.08rem; }
 .breadcrumb { display: flex; gap: 8px; align-items: center; font-size: .88rem; color: #94a3b8; margin-bottom: var(--space-4); }
