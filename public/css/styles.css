@@ -141,9 +141,7 @@ li, figcaption, blockquote { text-wrap: pretty; }
 /* ----------------------------- Header ---------------------------- */
 .site-header {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(255,255,255,.82);
-  backdrop-filter: saturate(150%) blur(12px);
-  -webkit-backdrop-filter: saturate(150%) blur(12px);
+  background: #ffffff;
   border-bottom: 1px solid transparent;
   transition: border-color .25s, box-shadow .25s, background .25s;
 }
