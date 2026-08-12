@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260812112152">
+  <link rel="stylesheet" href="css/styles.css?v=20260812145232">
 </head>
 <body data-page="profile">
   <div class="preloader" id="preloader" role="status" aria-label="Đang tải">
@@ -30,29 +30,36 @@
 
   <main id="main">
     <!-- ========================= COVER ============================= -->
-    <section class="section bg-surface">
+    <section class="page-hero page-hero--photo" style="--cover:url('assets/img/covers/profile.jpg')">
       <div class="container">
-        <div class="profile-cover" data-reveal>
-          <img class="brand__logo-lg" src="assets/logo.png" alt="Logo May Đông Thành (DOTHEGAMEX)">
-          <span class="eyebrow eyebrow--center" data-en="Company Profile">Hồ sơ năng lực</span>
-          <h1>CÔNG TY CỔ PHẦN MAY ĐÔNG THÀNH</h1>
-          <p class="lead" data-en="A garment manufacturer with 40+ years of heritage (since 1984), WRAP-certified, a strategic partner of NOA GROUP, serving domestic and international markets.">
-            Doanh nghiệp may mặc với hơn 40 năm bề dày (từ 1984), đạt chứng nhận WRAP, đối tác chiến lược của NOA GROUP, phục vụ thị trường trong nước và quốc tế.
-          </p>
-          <div class="hero__cta">
-            <button class="btn btn--lg" onclick="window.print()">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
-              <span data-en="Print / Save PDF">In / Lưu PDF</span>
-            </button>
-            <a class="btn btn--ghost btn--lg" href="contact.html" data-en="Contact us">Liên hệ</a>
-          </div>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" data-en="Home">Trang chủ</a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          <span data-en="Company Profile">Hồ sơ năng lực</span>
+        </nav>
+        <span class="eyebrow" data-en="Heritage since 1984 · Quang Ngai">Truyền thống từ 1984 · Quảng Ngãi</span>
+        <h1>CÔNG TY CỔ PHẦN MAY ĐÔNG THÀNH</h1>
+        <p data-en="A garment manufacturer with 40+ years of heritage (since 1984), WRAP-certified, a strategic partner of NOA GROUP, serving domestic and international markets.">
+          Doanh nghiệp may mặc với hơn 40 năm bề dày (từ 1984), đạt chứng nhận WRAP, đối tác chiến lược của NOA GROUP, phục vụ thị trường trong nước và quốc tế.
+        </p>
+        <div class="hero__cta">
+          <button class="btn btn--lg" onclick="window.print()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+            <span data-en="Print / Save PDF">In / Lưu PDF</span>
+          </button>
+          <a class="btn btn--outline-light btn--lg" href="contact.html" data-en="Contact us">Liên hệ</a>
+        </div>
+      </div>
+    </section>
 
-          <div class="profile-stats">
-            <div class="profile-stat"><div class="num">40<small>+</small></div><div class="lbl" data-en="Years of heritage">Năm bề dày</div></div>
-            <div class="profile-stat"><div class="num">4.000<small> m²</small></div><div class="lbl" data-en="Facility area">Diện tích nhà xưởng</div></div>
-            <div class="profile-stat"><div class="num">300<small>+</small></div><div class="lbl" data-en="Professional staff">Nhân sự chuyên nghiệp</div></div>
-            <div class="profile-stat"><div class="num">1.5<small>M+</small></div><div class="lbl" data-en="Products / year">Sản phẩm / năm</div></div>
-          </div>
+    <!-- ========================= KEY STATS ========================= -->
+    <section class="section--tight bg-surface">
+      <div class="container">
+        <div class="profile-stats" data-reveal>
+          <div class="profile-stat"><div class="num">40<small>+</small></div><div class="lbl" data-en="Years of heritage">Năm bề dày</div></div>
+          <div class="profile-stat"><div class="num">4.000<small> m²</small></div><div class="lbl" data-en="Facility area">Diện tích nhà xưởng</div></div>
+          <div class="profile-stat"><div class="num">300<small>+</small></div><div class="lbl" data-en="Professional staff">Nhân sự chuyên nghiệp</div></div>
+          <div class="profile-stat"><div class="num">1.5<small>M+</small></div><div class="lbl" data-en="Products / year">Sản phẩm / năm</div></div>
         </div>
       </div>
     </section>
@@ -205,6 +212,6 @@
 
   <footer id="site-footer"></footer>
   <div id="floaters"></div>
-  <script src="js/app.js?v=20260812112152" defer></script>
+  <script src="js/app.js?v=20260812145232" defer></script>
 </body>
 </html>
