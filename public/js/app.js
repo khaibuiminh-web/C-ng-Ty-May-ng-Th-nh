@@ -78,7 +78,7 @@
 
   /* --------- Chống chữ mồ côi (widow) — nối 2 từ cuối bằng non-breaking space --------- */
   function preventWidows() {
-    var sel = 'p, h1, h2, h3, h4, figcaption, blockquote, .footer-about, .hero__lead';
+    var sel = 'p, h1, h2, h3, h4, figcaption, blockquote, .footer-about, .hero__lead, .eyebrow, .media-tag, .trust-item span, .breadcrumb span';
     document.querySelectorAll(sel).forEach(function (el) {
       var nodes = el.childNodes;
       for (var i = nodes.length - 1; i >= 0; i--) {
