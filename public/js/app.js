@@ -71,8 +71,26 @@
       b.classList.toggle('is-active', b.dataset.lang === lang);
       b.setAttribute('aria-pressed', b.dataset.lang === lang);
     });
+    // Chống "chữ mồ côi": giữ 2 từ cuối mỗi đoạn/tiêu đề dính nhau (chạy lại sau mỗi lần đổi ngôn ngữ)
+    preventWidows();
   }
   function t(obj) { return getLang() === 'en' ? obj.en : obj.vi; }
+
+  /* --------- Chống chữ mồ côi (widow) — nối 2 từ cuối bằng non-breaking space --------- */
+  function preventWidows() {
+    var sel = 'p, h1, h2, h3, h4, figcaption, blockquote, .footer-about, .hero__lead';
+    document.querySelectorAll(sel).forEach(function (el) {
+      var nodes = el.childNodes;
+      for (var i = nodes.length - 1; i >= 0; i--) {
+        var n = nodes[i];
+        if (n.nodeType === 3) { // text node
+          var txt = n.nodeValue;
+          if (/\S\s+\S/.test(txt)) { n.nodeValue = txt.replace(/\s+(\S+)\s*$/, '\u00A0$1'); break; }
+          if (/\S/.test(txt)) break; // text node chỉ có 1 từ -> dừng
+        } else if (n.nodeType === 1) { break; } // gặp thẻ con ở cuối -> dừng cho an toàn
+      }
+    });
+  }
 
   /* ========================= Build Header ============================ */
   function buildHeader() {
