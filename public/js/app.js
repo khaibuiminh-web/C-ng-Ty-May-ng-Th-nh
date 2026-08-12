@@ -18,8 +18,8 @@
     email: 'dongthanhqng@gmail.com',
     tax: '4300269721',
     since: '1984',
-    addressVi: '32 Lê Văn Sỹ, Phường Trần Phú, TP. Quảng Ngãi, Tỉnh Quảng Ngãi',
-    addressEn: '32 Le Van Sy St., Tran Phu Ward, Quang Ngai City, Quang Ngai Province, Vietnam'
+    addressVi: '32 Lê Văn Sỹ, Phường Nghĩa Lộ, TP. Quảng Ngãi, Tỉnh Quảng Ngãi',
+    addressEn: '32 Le Van Sy St., Nghia Lo Ward, Quang Ngai City, Quang Ngai Province, Vietnam'
   };
 
   /* ------------------------- Menu điều hướng -------------------------- */
