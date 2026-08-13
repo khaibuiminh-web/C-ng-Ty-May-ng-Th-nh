@@ -1,0 +1,11 @@
+# Cấu hình deploy cho Netlify — website tĩnh trong thư mục public/
+[build]
+  publish = "public"
+  # Không cần build (HTML/CSS/JS thuần), để trống command
+  command = ""
+
+# Trả về trang 404 tùy chỉnh khi không tìm thấy đường dẫn
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
