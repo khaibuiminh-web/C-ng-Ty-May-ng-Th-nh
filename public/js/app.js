@@ -335,10 +335,14 @@
       box.classList.add('is-open');
       document.body.style.overflow = 'hidden';
     }
+    var clearTimer;
     function close() {
       box.classList.remove('is-open');
       document.body.style.overflow = '';
-      bimg.src = '';
+      clearTimeout(clearTimer);
+      clearTimer = setTimeout(function () {
+        if (!box.classList.contains('is-open')) bimg.src = '';
+      }, 450);
     }
 
     thumbs.forEach(function (t) {
