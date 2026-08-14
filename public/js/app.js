@@ -77,18 +77,26 @@
 
   /* --------- Chống chữ mồ côi (widow) — nối 2 từ cuối bằng non-breaking space --------- */
   function preventWidows() {
-    var sel = 'p, h1, h2, h3, h4, figcaption, blockquote, .footer-about, .hero__lead, .eyebrow, .media-tag, .trust-item span, .breadcrumb span';
-    document.querySelectorAll(sel).forEach(function (el) {
-      var nodes = el.childNodes;
-      for (var i = nodes.length - 1; i >= 0; i--) {
-        var n = nodes[i];
-        if (n.nodeType === 3) { // text node
-          var txt = n.nodeValue;
-          if (/\S\s+\S/.test(txt)) { n.nodeValue = txt.replace(/\s+(\S+)\s*$/, '\u00A0$1'); break; }
-          if (/\S/.test(txt)) break; // text node chỉ có 1 từ -> dừng
-        } else if (n.nodeType === 1) { break; } // gặp thẻ con ở cuối -> dừng cho an toàn
+    var sel = 'p, h1, h2, h3, h4, li, figcaption, blockquote, .eyebrow, .media-tag, .lbl, .footer-about, .hero__lead, .trust-item, .breadcrumb, .cert, .profile-legal .row';
+    document.querySelectorAll(sel).forEach(joinLastTwoWords);
+  }
+  // Noi 2 tu cuoi bang non-breaking space; di sau vao the con cuoi de khong bo sot cho nao
+  function joinLastTwoWords(el) {
+    var nodes = el.childNodes;
+    for (var i = nodes.length - 1; i >= 0; i--) {
+      var n = nodes[i];
+      if (n.nodeType === 3) {
+        var txt = n.nodeValue;
+        if (/\S\s+\S/.test(txt)) { n.nodeValue = txt.replace(/\s+(\S+)\s*$/, '\u00A0$1'); return true; }
+        if (/\S/.test(txt)) return true;
+      } else if (n.nodeType === 1) {
+        var tag = (n.tagName || '').toLowerCase();
+        if (tag === 'br' || tag === 'svg' || tag === 'img') return true;
+        if (joinLastTwoWords(n)) return true;
+        if (/\S/.test(n.textContent || '')) return true;
       }
-    });
+    }
+    return false;
   }
 
   /* ========================= Build Header ============================ */
@@ -157,8 +165,8 @@
             '<a class="brand" href="index.html">' + LOGO_WHITE +
               '<span><span class="brand__name">' + CO.brand + '</span><span class="brand__tag">' + CO.tag + '</span></span>' +
             '</a>' +
-            '<p class="footer-about" data-en="Garment manufacturer with 40+ years of heritage (since 1984) in Quang Ngai — strategic partner of NOA GROUP, reliable for domestic and export markets.">' +
-              'Doanh nghiệp may mặc với hơn 40 năm bề dày (từ 1984) tại Quảng Ngãi — đối tác chiến lược của NOA GROUP, tin cậy cho thị trường trong nước và xuất khẩu.' +
+            '<p class="footer-about" data-en="Garment manufacturer established in 1999 with over 25 years of operation in Quang Ngai — strategic partner of NOA GROUP, reliable for domestic and export markets.">' +
+              'Doanh nghiệp may mặc thành lập năm 1999, hơn 25 năm hoạt động tại Quảng Ngãi — đối tác chiến lược của NOA GROUP, tin cậy cho thị trường trong nước và xuất khẩu.' +
             '</p>' +
           '</div>' +
           '<div class="footer">' +
@@ -170,7 +178,7 @@
             '<ul class="footer-links">' +
               '<li><span style="color:#94a3b8" data-en="Tax code">Mã số thuế</span>: ' + CO.tax + '</li>' +
               '<li><span style="color:#94a3b8" data-en="Main line">Ngành chính</span>: ' + '<span data-en="Made-up textiles (excl. apparel)">Sản xuất hàng dệt sẵn (trừ trang phục)</span></li>' +
-              '<li><span style="color:#94a3b8" data-en="Heritage">Bề dày</span>: ' + '<span data-en="40+ years (since 1984)">Hơn 40 năm (từ 1984)</span></li>' +
+              '<li><span style="color:#94a3b8" data-en="Heritage">Bề dày</span>: ' + '<span data-en="25+ years (since 1999)">Hơn 25 năm (từ 1999)</span></li>' +
               '<li><span style="color:#94a3b8" data-en="Strategic partner">Đối tác chiến lược</span>: NOA GROUP</li>' +
               '<li><a href="capabilities.html" data-en="OEM / ODM Services">Dịch vụ OEM / ODM</a></li>' +
               '<li><a href="careers.html" data-en="Recruitment">Tuyển dụng</a></li>' +

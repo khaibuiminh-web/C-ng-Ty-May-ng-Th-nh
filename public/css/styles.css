@@ -81,6 +81,7 @@ p { color: var(--color-secondary); text-wrap: pretty; }
 /* Ngăn chữ mồ côi & rớt chữ: cân dòng cho tiêu đề, tránh 1 từ lẻ cuối đoạn */
 li, figcaption, blockquote { text-wrap: pretty; }
 .hero__lead, .section-head p, .page-hero p, .cta-band p { text-wrap: balance; }
+.lbl, .eyebrow, .media-tag, .cert span, .trust-item span, .breadcrumb span, .profile-legal .row span, .feature-list span { text-wrap: pretty; }
 
 /* --------------------------- Utilities --------------------------- */
 .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--space-5); }
