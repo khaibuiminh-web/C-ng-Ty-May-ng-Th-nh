@@ -165,6 +165,7 @@
             '<a class="brand" href="index.html">' + LOGO_WHITE +
               '<span><span class="brand__name">' + CO.brand + '</span><span class="brand__tag">' + CO.tag + '</span></span>' +
             '</a>' +
+            '<p class="footer-slogan" data-en="Where the craft of needle and thread is preserved and honored.">Nơi nghề kim chỉ được giữ gìn và trân trọng.</p>' +
             '<p class="footer-about" data-en="Garment manufacturer established in 1999 with over 25 years of operation in Quang Ngai — strategic partner of NOA GROUP, reliable for domestic and export markets.">' +
               'Doanh nghiệp may mặc thành lập năm 1999, hơn 25 năm hoạt động tại Quảng Ngãi — đối tác chiến lược của NOA GROUP, tin cậy cho thị trường trong nước và xuất khẩu.' +
             '</p>' +
