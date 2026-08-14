@@ -724,6 +724,8 @@ body[data-page="profile"] .page-hero h1 { line-height: 1.5; }
 /* --------------------------- Print ------------------------------- */
 @media print {
   .preloader, .site-header, .site-footer, .floaters, .breadcrumb, .lightbox, [onclick] { display: none !important; }
+  /* Buộc mọi phần hiệu ứng xuất hiện đầy đủ khi In/Lưu PDF (nếu không sẽ bị trắng) */
+  [data-reveal], [data-reveal-delay] { opacity: 1 !important; transform: none !important; transition: none !important; }
   .bg-primary, .page-hero, .cta-band, .wrap-feature { background: #fff !important; }
   .page-hero--photo { background-image: none !important; }
   .page-hero--photo::before { display: none !important; }
