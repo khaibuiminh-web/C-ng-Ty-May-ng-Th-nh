@@ -298,6 +298,7 @@ li, figcaption, blockquote { text-wrap: pretty; }
 /* Split section */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8); align-items: center; }
 .split--reverse .split__media { order: 2; }
+.split--media-lg { grid-template-columns: 1.15fr 1fr; }
 .media-frame { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--color-border); }
 .media-frame img { width: 100%; }
 /* Slideshow tu dong doi anh (mo dan) */
