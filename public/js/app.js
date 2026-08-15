@@ -444,6 +444,25 @@
     initCounters();
     initLightbox();
     initContactForm();
+    initMediaRotator();
+  }
+
+  /* ===================== Slideshow anh tu dong chay ==================== */
+  function initMediaRotator() {
+    var frames = document.querySelectorAll('.media-frame--rotator');
+    if (!frames.length) return;
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return; // giu nguyen anh dau, khong tu chay
+    frames.forEach(function (frame) {
+      var imgs = frame.querySelectorAll('.rotator-img');
+      if (imgs.length < 2) return;
+      var i = 0;
+      setInterval(function () {
+        imgs[i].classList.remove('is-active');
+        i = (i + 1) % imgs.length;
+        imgs[i].classList.add('is-active');
+      }, 2000);
+    });
   }
 
   if (document.readyState === 'loading') {
