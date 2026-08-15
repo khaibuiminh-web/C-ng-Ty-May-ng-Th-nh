@@ -461,7 +461,7 @@
         imgs[i].classList.remove('is-active');
         i = (i + 1) % imgs.length;
         imgs[i].classList.add('is-active');
-      }, 2000);
+      }, 3000);
     });
   }
 
