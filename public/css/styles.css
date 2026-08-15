@@ -312,6 +312,7 @@ li, figcaption, blockquote { text-wrap: pretty; }
 .stat .num { font-family: var(--font-heading); font-weight: 700; font-size: clamp(2.2rem, 1.5rem + 2vw, 3.2rem); color: #fff; line-height: 1; }
 .stat .num small { font-size: .5em; margin-left: 2px; color: var(--color-gold-light); }
 .stat .lbl { color: #94a3b8; margin-top: var(--space-2); font-size: .95rem; }
+.stat .stat-note { color: #64748b; font-size: .74rem; margin-top: 4px; line-height: 1.4; }
 
 /* Process timeline */
 .process { counter-reset: step; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: var(--space-5); }
@@ -711,6 +712,7 @@ body[data-page="profile"] .page-hero h1 { line-height: 1.5; }
 .profile-stat .num { font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.7rem, 1.1rem + 2vw, 2.7rem); color: var(--color-primary); line-height: 1; }
 .profile-stat .num small { color: var(--color-gold-ink); font-size: .5em; margin-left: 2px; }
 .profile-stat .lbl { color: var(--color-muted-fg); margin-top: 6px; font-size: .9rem; }
+.profile-stat .stat-note { color: var(--color-muted-fg); font-size: .74rem; margin-top: 3px; opacity: .8; }
 .profile-legal { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--space-7); max-width: 960px; margin-inline: auto; }
 .profile-legal .row { display: flex; gap: var(--space-3); padding: 12px 0; border-bottom: 1px dashed var(--color-border); font-size: .96rem; }
 .profile-legal .row b { flex: 0 0 150px; color: var(--color-primary); font-family: var(--font-heading); font-weight: 600; }
