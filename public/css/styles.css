@@ -425,6 +425,7 @@ li, figcaption, blockquote { text-wrap: pretty; }
 .form__status.is-err { display: block; background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
 .map-frame { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-border); box-shadow: var(--shadow-sm); }
 .map-frame iframe { width: 100%; height: 320px; border: 0; display: block; }
+.map-label { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); margin-bottom: var(--space-3); font-size: .98rem; }
 
 /* --------------------------- Footer ------------------------------ */
 .site-footer { background: var(--color-primary); color: #cbd5e1; padding-block: var(--space-8) var(--space-6); }
