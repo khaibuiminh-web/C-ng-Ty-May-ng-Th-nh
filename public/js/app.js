@@ -449,7 +449,7 @@
 
   /* ===================== Slideshow anh tu dong chay ==================== */
   function initMediaRotator() {
-    var frames = document.querySelectorAll('.media-frame--rotator');
+    var frames = document.querySelectorAll('.media-frame--rotator, .hero-rotator');
     if (!frames.length) return;
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion) return; // giu nguyen anh dau, khong tu chay

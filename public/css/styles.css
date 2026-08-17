@@ -212,24 +212,31 @@ li, figcaption, blockquote { text-wrap: pretty; }
     radial-gradient(800px 500px at 0% 100%, rgba(30,41,59,.9), transparent 55%),
     linear-gradient(160deg, #0b1220 0%, #0f172a 45%, #111c33 100%);
 }
-/* Hero full-cover: ảnh nền phủ kín + lớp phủ navy nhẹ dưới chữ */
+/* Hero full-cover: nhiều ảnh xoay vòng (xưởng 1 & 2) + lớp phủ navy nhẹ dưới chữ */
 .hero--cover {
-  background:
-    linear-gradient(90deg, rgba(11,18,32,.94) 0%, rgba(15,23,42,.80) 46%, rgba(15,23,42,.45) 100%),
-    url('../assets/img/hero.jpg?v=4') center / cover no-repeat;
+  background: none;
   min-height: 76vh; display: flex; align-items: center;
 }
-.hero--cover > .container { width: 100%; }
+.hero--cover .hero-rotator { position: absolute; inset: 0; z-index: 0; }
+.hero--cover .hero-rotator .rotator-img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity 1.8s ease-in-out;
+}
+.hero--cover .hero-rotator .rotator-img.is-active { opacity: 1; }
+.hero--cover::before {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(90deg, rgba(11,18,32,.94) 0%, rgba(15,23,42,.80) 46%, rgba(15,23,42,.45) 100%);
+}
+.hero--cover > .container { width: 100%; position: relative; z-index: 2; }
 .hero--cover .hero__grid { grid-template-columns: 1fr; }
 .hero--cover .hero__content { max-width: 640px; }
 @media (max-width: 768px) {
-  .hero--cover {
-    min-height: 0;
-    background:
-      linear-gradient(180deg, rgba(11,18,32,.90) 0%, rgba(15,23,42,.82) 55%, rgba(15,23,42,.74) 100%),
-      url('../assets/img/hero.jpg?v=4') center / cover no-repeat;
+  .hero--cover { min-height: 0; }
+  .hero--cover::before {
+    background: linear-gradient(180deg, rgba(11,18,32,.90) 0%, rgba(15,23,42,.82) 55%, rgba(15,23,42,.74) 100%);
   }
 }
+@media (prefers-reduced-motion: reduce) { .hero--cover .hero-rotator .rotator-img { transition: none; } }
 .hero__grid {
   display: grid; grid-template-columns: 1.05fr .95fr; gap: var(--space-8); align-items: center;
   padding-block: clamp(var(--space-8), 7vw, 120px);
