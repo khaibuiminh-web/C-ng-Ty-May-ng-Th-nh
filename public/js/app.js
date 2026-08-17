@@ -452,16 +452,35 @@
     var frames = document.querySelectorAll('.media-frame--rotator, .hero-rotator');
     if (!frames.length) return;
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduceMotion) return; // giu nguyen anh dau, khong tu chay
     frames.forEach(function (frame) {
       var imgs = frame.querySelectorAll('.rotator-img');
       if (imgs.length < 2) return;
-      var i = 0;
-      setInterval(function () {
+      var dotsBox = frame.parentElement ? frame.parentElement.querySelector('.rotator-dots') : null;
+      var dots = dotsBox ? dotsBox.querySelectorAll('.rotator-dot') : null;
+      var i = 0, timer;
+
+      function show(idx) {
         imgs[i].classList.remove('is-active');
-        i = (i + 1) % imgs.length;
+        i = (idx + imgs.length) % imgs.length;
         imgs[i].classList.add('is-active');
-      }, 3000);
+        if (dots) {
+          dots.forEach(function (d, di) {
+            d.classList.toggle('is-active', di === i);
+            d.setAttribute('aria-current', di === i ? 'true' : 'false');
+          });
+        }
+      }
+      function start() {
+        if (reduceMotion) return; // giu nguyen anh dang xem, khong tu chay
+        clearInterval(timer);
+        timer = setInterval(function () { show(i + 1); }, 3000);
+      }
+      if (dots) {
+        dots.forEach(function (d, di) {
+          d.addEventListener('click', function () { show(di); start(); });
+        });
+      }
+      start();
     });
   }
 
