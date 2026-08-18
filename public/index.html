@@ -19,7 +19,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260818132855">
+  <link rel="preload" as="image" href="assets/img/hero.webp?v=6" fetchpriority="high">
+  <link rel="stylesheet" href="css/styles.css?v=20260818134755">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -54,9 +55,9 @@
     <!-- ============================ HERO ============================ -->
     <section class="hero hero--cover">
       <div class="hero-rotator" aria-hidden="true">
-        <img class="rotator-img is-active" src="assets/img/hero.webp?v=6" alt="" loading="eager">
-        <img class="rotator-img" src="assets/img/hero-2.webp?v=4" alt="" loading="lazy">
-        <img class="rotator-img" src="assets/img/hero-3.webp?v=1" alt="" loading="lazy">
+        <img class="rotator-img is-active" src="assets/img/hero.webp?v=6" alt="" loading="eager" fetchpriority="high">
+        <img class="rotator-img" data-src="assets/img/hero-2.webp?v=4" alt="" loading="lazy">
+        <img class="rotator-img" data-src="assets/img/hero-3.webp?v=1" alt="" loading="lazy">
       </div>
       <div class="rotator-dots hero-dots" role="tablist" aria-label="Chọn ảnh nền">
         <button class="rotator-dot is-active" type="button" role="tab" aria-current="true" data-en-al="View image 1" aria-label="Xem ảnh 1"></button>
@@ -116,10 +117,10 @@
           <div class="split__media" data-reveal>
             <div class="media-frame media-frame--rotator" style="aspect-ratio:3/2">
               <img class="rotator-img is-active" src="assets/img/floor.webp?v=7" alt="Nhà xưởng sản xuất May Đông Thành" width="1600" height="900">
-              <img class="rotator-img" src="assets/img/about-2.webp?v=1" alt="Đánh dấu sơ đồ cắt tại May Đông Thành" width="1600" height="900">
-              <img class="rotator-img" src="assets/img/about-3.webp" alt="Trải và cắt vải tại May Đông Thành" width="1600" height="900">
-              <img class="rotator-img" src="assets/img/about-4.webp?v=1" alt="Cắt sơ đồ mẫu thủ công tại May Đông Thành" width="1600" height="900">
-              <img class="rotator-img" src="assets/img/about-5.webp" alt="Kiểm tra chất lượng tại May Đông Thành" width="1600" height="900">
+              <img class="rotator-img" data-src="assets/img/about-2.webp?v=1" alt="Đánh dấu sơ đồ cắt tại May Đông Thành" width="1600" height="900">
+              <img class="rotator-img" data-src="assets/img/about-3.webp" alt="Trải và cắt vải tại May Đông Thành" width="1600" height="900">
+              <img class="rotator-img" data-src="assets/img/about-4.webp?v=1" alt="Cắt sơ đồ mẫu thủ công tại May Đông Thành" width="1600" height="900">
+              <img class="rotator-img" data-src="assets/img/about-5.webp" alt="Kiểm tra chất lượng tại May Đông Thành" width="1600" height="900">
               <span class="media-tag" data-en="Quang Ngai facility">Xưởng tại Quảng Ngãi</span>
             </div>
           </div>
@@ -329,6 +330,6 @@
 
   <footer id="site-footer"></footer>
   <div id="floaters"></div>
-  <script src="js/app.js?v=20260818132855" defer></script>
+  <script src="js/app.js?v=20260818134755" defer></script>
 </body>
 </html>

@@ -516,10 +516,31 @@
   }
 
   /* ===================== Slideshow anh tu dong chay ==================== */
+  // Anh khong hien thi dau tien (2,3,4...) duoc de src="" -> data-src="" trong HTML
+  // de trinh duyet KHONG tai truoc, tranh canh tranh bang thong voi noi dung dang xem.
+  // Sau khi trang da tai xong (window load), moi tai ngam cac anh con lai.
+  function loadPendingRotatorImg(img) {
+    var src = img.getAttribute('data-src');
+    if (!src) return;
+    img.src = src;
+    img.removeAttribute('data-src');
+  }
+  function deferRotatorImages() {
+    var pending = document.querySelectorAll('.rotator-img[data-src]');
+    if (!pending.length) return;
+    pending.forEach(loadPendingRotatorImg);
+  }
   function initMediaRotator() {
     var frames = document.querySelectorAll('.media-frame--rotator, .hero-rotator, .prod');
     if (!frames.length) return;
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (document.readyState === 'complete') {
+      setTimeout(deferRotatorImages, 400);
+    } else {
+      window.addEventListener('load', function () { setTimeout(deferRotatorImages, 400); });
+    }
+
     frames.forEach(function (frame) {
       var imgs = frame.querySelectorAll('.rotator-img');
       if (imgs.length < 2) return;
@@ -530,6 +551,7 @@
       function show(idx) {
         imgs[i].classList.remove('is-active');
         i = (idx + imgs.length) % imgs.length;
+        loadPendingRotatorImg(imgs[i]); // phong khi chuyen anh truoc luc tai ngam xong
         imgs[i].classList.add('is-active');
         if (dots) {
           dots.forEach(function (d, di) {
