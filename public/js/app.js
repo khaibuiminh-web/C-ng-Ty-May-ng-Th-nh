@@ -244,7 +244,14 @@
       }
       lastY = y;
     }
-    window.addEventListener('scroll', onScroll, { passive: true });
+    // Gom xu ly theo khung hinh (requestAnimationFrame) thay vi chay tren tung
+    // su kien scroll (co the ban hang chuc lan/giay) -> muot hon, do giat lag.
+    var scrollTicking = false;
+    window.addEventListener('scroll', function () {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      requestAnimationFrame(function () { onScroll(); scrollTicking = false; });
+    }, { passive: true });
     onScroll();
 
     // Mobile menu
