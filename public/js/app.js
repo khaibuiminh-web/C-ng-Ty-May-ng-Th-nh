@@ -156,9 +156,13 @@
     var host = document.getElementById('site-footer');
     if (!host) return;
     var year = new Date().getFullYear();
+    var activePage = document.body.getAttribute('data-page');
 
     var quick = NAV.map(function (n) {
-      return '<li><a href="' + n.href + '" data-en="' + n.en + '">' + n.vi + '</a></li>';
+      var is = n.key === activePage ? ' is-active' : '';
+      var aria = n.key === activePage ? ' aria-current="page"' : '';
+      return '<li><a class="footer-links__link' + is + '" href="' + n.href + '"' + aria +
+        ' data-en="' + n.en + '">' + n.vi + '</a></li>';
     }).join('');
 
     host.className = 'site-footer';
@@ -520,31 +524,6 @@
     initLightbox();
     initContactForm();
     initMediaRotator();
-    initAwardsModal();
-  }
-
-  /* ==================== Khoi "Bang khen & Giay khen" ================== */
-  function initAwardsModal() {
-    var trigger = document.querySelector('.awards-trigger');
-    var modal = document.getElementById('awards-modal');
-    if (!trigger || !modal) return;
-    var closeBtn = modal.querySelector('.awards-modal__close');
-
-    function open() {
-      modal.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    }
-    function close() {
-      modal.classList.remove('is-open');
-      document.body.style.overflow = '';
-      trigger.focus();
-    }
-    trigger.addEventListener('click', open);
-    if (closeBtn) closeBtn.addEventListener('click', close);
-    modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && modal.classList.contains('is-open')) close();
-    });
   }
 
   /* ===================== Slideshow anh tu dong chay ==================== */
