@@ -449,7 +449,7 @@
 
   /* ===================== Slideshow anh tu dong chay ==================== */
   function initMediaRotator() {
-    var frames = document.querySelectorAll('.media-frame--rotator, .hero-rotator');
+    var frames = document.querySelectorAll('.media-frame--rotator, .hero-rotator, .prod');
     if (!frames.length) return;
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     frames.forEach(function (frame) {

@@ -380,6 +380,8 @@ li, figcaption, blockquote { text-wrap: pretty; }
 .prod:hover img { filter: grayscale(1) contrast(1.06) brightness(1.03); }
 .prod::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(2,6,23,.85) 8%, rgba(2,6,23,.15) 60%, transparent); }
 .prod:hover img { transform: scale(1.06); }
+.prod img.rotator-img { opacity: 0; transition: opacity 1.6s ease-in-out, transform .5s var(--ease), filter .4s var(--ease); }
+.prod img.rotator-img.is-active { opacity: 1; }
 .prod__body { padding: var(--space-5); color: #fff; }
 .prod__body h3 { color: #fff; font-size: 1.2rem; }
 .prod__body p { color: #cbd5e1; font-size: .9rem; margin-top: 4px; }
