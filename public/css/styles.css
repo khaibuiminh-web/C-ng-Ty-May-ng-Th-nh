@@ -620,6 +620,28 @@ body[data-page="profile"] .page-hero h1 { line-height: 1.5; }
 .award-card .card__icon { background: linear-gradient(140deg, var(--color-gold-soft), #fffdf7); color: var(--color-gold-ink); }
 .award-card .year { align-self: flex-start; margin-top: var(--space-2); display: inline-block; padding: 3px 12px; border-radius: var(--radius-full); background: var(--color-gold-soft); color: var(--color-gold-ink); font-family: var(--font-heading); font-weight: 600; font-size: .78rem; }
 
+/* Khoi thu gon "Bang khen & Giay khen" + modal bam xem */
+.awards-trigger { display: flex; align-items: center; gap: var(--space-4); width: 100%; max-width: 640px; margin: var(--space-6) auto 0; padding: var(--space-5); border-radius: var(--radius-lg); border: 1px solid var(--color-border); background: var(--color-surface); box-shadow: var(--shadow-sm); cursor: pointer; text-align: left; font: inherit; transition: box-shadow .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease); }
+.awards-trigger:hover { box-shadow: var(--shadow); border-color: var(--color-accent); transform: translateY(-2px); }
+.awards-trigger__icon { flex-shrink: 0; width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(140deg, var(--color-gold-soft), #fffdf7); color: var(--color-gold-ink); }
+.awards-trigger__icon svg { width: 24px; height: 24px; }
+.awards-trigger__text { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.awards-trigger__text b { font-family: var(--font-heading); font-size: 1.05rem; color: var(--color-primary); }
+.awards-trigger__text > span { font-size: .86rem; color: var(--color-muted-fg); }
+.awards-trigger__arrow { flex-shrink: 0; width: 20px; height: 20px; color: var(--color-muted-fg); transition: transform .2s var(--ease); }
+.awards-trigger:hover .awards-trigger__arrow { transform: translateX(3px); }
+
+.awards-modal { position: fixed; inset: 0; z-index: 1000; background: rgba(2,6,23,.6); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .3s var(--ease), visibility 0s linear .3s; }
+.awards-modal.is-open { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity .3s var(--ease); }
+.awards-modal__panel { position: relative; background: var(--color-surface); border-radius: var(--radius-lg); max-width: 920px; width: 100%; max-height: 86vh; overflow-y: auto; padding: var(--space-7); box-shadow: var(--shadow-lg); transform: scale(.94); opacity: 0; transition: transform .35s var(--ease), opacity .3s var(--ease); }
+.awards-modal.is-open .awards-modal__panel { transform: scale(1); opacity: 1; }
+.awards-modal__panel h3 { margin-bottom: var(--space-5); padding-right: var(--space-7); }
+.awards-modal__close { position: absolute; top: 18px; right: 18px; width: 42px; height: 42px; border-radius: 50%; border: 0; background: var(--color-muted); color: var(--color-primary); font-size: 1.5rem; line-height: 1; cursor: pointer; display: grid; place-items: center; transition: background .2s; }
+.awards-modal__close:hover { background: var(--color-border); }
+.awards-modal .cards--awards { margin-top: 0; }
+@media (max-width: 640px) { .awards-modal { padding: 12px; } .awards-modal__panel { padding: var(--space-5); } }
+@media (prefers-reduced-motion: reduce) { .awards-modal, .awards-modal__panel { transition-duration: .01ms; } }
+
 .cert-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: var(--space-4); margin-top: var(--space-6); }
 /* Thư viện "Hình ảnh nhà máy" (Hồ sơ): 6 ảnh xếp 3×2 cho cân */
 .cert-gallery--facility { grid-template-columns: repeat(3, 1fr); }
