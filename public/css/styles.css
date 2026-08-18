@@ -630,7 +630,6 @@ body[data-page="profile"] .page-hero h1 { line-height: 1.5; }
   .gallery-mosaic .cert-thumb { aspect-ratio: auto; height: 100%; }
   .gallery-mosaic .cert-thumb:nth-child(1) { grid-column: span 2; grid-row: span 2; }
   .gallery-mosaic .cert-thumb:nth-child(1) figcaption { font-size: .95rem; padding: 30px 16px 14px; }
-  .gallery-mosaic .cert-thumb:nth-child(8) { grid-column: span 2; }
 }
 
 /* Zoom affordance (kính lúp khi rê chuột lên ảnh nhà xưởng/đội ngũ) */
