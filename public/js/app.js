@@ -189,7 +189,7 @@
               '<li><span style="color:#94a3b8" data-en="Main line">Ngành chính</span>: ' + '<span data-en="Made-up textiles (excl. apparel)">Sản xuất hàng dệt sẵn (trừ trang phục)</span></li>' +
               '<li><span style="color:#94a3b8" data-en="Heritage">Bề dày</span>: ' + '<span data-en="25+ years (since 1999)">Hơn 25 năm (từ 1999)</span></li>' +
               '<li><span style="color:#94a3b8" data-en="Strategic partner">Đối tác chiến lược</span>: NOA GROUP</li>' +
-              '<li><a href="capabilities.html" data-en="OEM / ODM Services">Dịch vụ OEM / ODM</a></li>' +
+              '<li><a href="capabilities.html" data-en="OEM / CMT Services">Dịch vụ OEM / CMT</a></li>' +
               '<li><a href="careers.html" data-en="Recruitment">Tuyển dụng</a></li>' +
             '</ul>' +
           '</div>' +

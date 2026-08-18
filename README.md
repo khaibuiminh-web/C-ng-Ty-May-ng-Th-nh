@@ -1,6 +1,6 @@
 # Website CÔNG TY CỔ PHẦN MAY ĐÔNG THÀNH (DOTHEGAMEX)
 
-Website giới thiệu doanh nghiệp **song ngữ Việt / Anh** cho Công ty Cổ phần May Đông Thành — hơn 25 năm kinh nghiệm sản xuất, gia công may mặc OEM/ODM tại Quảng Ngãi.
+Website giới thiệu doanh nghiệp **song ngữ Việt / Anh** cho Công ty Cổ phần May Đông Thành — hơn 25 năm kinh nghiệm sản xuất, gia công may mặc OEM/CMT tại Quảng Ngãi.
 
 - **Phong cách thiết kế:** Trust & Authority (navy `#0F172A` + xanh CTA `#0369A1`), font Poppins / Open Sans.
 - **Công nghệ:** Node.js + Express (server + API liên hệ) · HTML/CSS/JS thuần (không cần framework, không cần build phức tạp).
