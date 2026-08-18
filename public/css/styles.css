@@ -768,7 +768,7 @@ body[data-page="profile"] .page-hero h1 { line-height: 1.5; }
   .page-hero--photo::before { display: none !important; }
   .bg-primary, .bg-primary *, .cta-band, .cta-band *, .wrap-feature, .wrap-feature *, .page-hero, .page-hero * { color: #111 !important; }
   .wrap-badge { border: 1px solid #999 !important; }
-  .wrap-badge svg, .wrap-badge b, .wrap-badge span { color: #0f172a !important; }
+  .wrap-badge b, .wrap-badge span { color: #0f172a !important; }
   .section { padding-block: 16px !important; }
   .card, .prod, .principle, .award-card, .timeline__item, .benefit { break-inside: avoid; }
   a { color: #111 !important; }
