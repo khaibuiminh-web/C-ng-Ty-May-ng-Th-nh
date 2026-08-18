@@ -336,19 +336,67 @@
     var thumbs = document.querySelectorAll('.cert-thumb, .media-frame img');
     if (!thumbs.length) return;
 
+    // Gom theo thư viện chứa nó (để bấm mũi tên chuyển ảnh trong cùng bộ)
+    var groupSel = '.cert-gallery, .gallery-mosaic, .prod-grid';
+    function groupOf(t) {
+      var g = t.closest(groupSel);
+      return g || t; // ảnh đơn lẻ (media-frame) tự làm nhóm riêng 1 ảnh
+    }
+    var groups = [];
+    var groupIndex = new Map();
+    thumbs.forEach(function (t) {
+      var g = groupOf(t);
+      if (!groupIndex.has(g)) { groupIndex.set(g, groups.length); groups.push([]); }
+      groups[groupIndex.get(g)].push(t);
+    });
+
     var box = document.createElement('div');
     box.className = 'lightbox';
     box.innerHTML =
       '<button class="lightbox__close" aria-label="Đóng">&times;</button>' +
+      '<button class="lightbox__nav lightbox__prev" aria-label="Ảnh trước">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>' +
+      '</button>' +
       '<img alt="">' +
+      '<button class="lightbox__nav lightbox__next" aria-label="Ảnh sau">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>' +
+      '</button>' +
       '<div class="lightbox__cap"></div>';
     document.body.appendChild(box);
     var bimg = box.querySelector('img');
     var bcap = box.querySelector('.lightbox__cap');
+    var bprev = box.querySelector('.lightbox__prev');
+    var bnext = box.querySelector('.lightbox__next');
 
-    function open(src, cap) {
-      bimg.src = src; bimg.alt = cap || '';
-      bcap.textContent = cap || '';
+    var curGroup = null, curIdx = 0;
+
+    function captionOf(t) {
+      var img = t.tagName === 'IMG' ? t : t.querySelector('img');
+      if (!img) return { img: null, cap: '' };
+      var cap = t.getAttribute('data-cap');
+      if (!cap) {
+        var fc = t.querySelector && t.querySelector('figcaption');
+        cap = fc ? fc.textContent : (img.getAttribute('alt') || '');
+      }
+      return { img: img, cap: cap };
+    }
+
+    function show(idx) {
+      curIdx = (idx + curGroup.length) % curGroup.length;
+      var info = captionOf(curGroup[curIdx]);
+      if (!info.img) return;
+      bimg.src = info.img.getAttribute('src'); bimg.alt = info.cap || '';
+      bcap.textContent = info.cap || '';
+      var multi = curGroup.length > 1;
+      bprev.style.display = bnext.style.display = multi ? '' : 'none';
+    }
+
+    function open(t) {
+      var g = groupOf(t);
+      curGroup = groups[groupIndex.get(g)] || [t];
+      curIdx = curGroup.indexOf(t);
+      if (curIdx < 0) curIdx = 0;
+      show(curIdx);
       box.classList.add('is-open');
       document.body.style.overflow = 'hidden';
     }
@@ -364,32 +412,35 @@
 
     thumbs.forEach(function (t) {
       t.style.cursor = 'zoom-in';
-      t.addEventListener('click', function () {
-        var img = t.tagName === 'IMG' ? t : t.querySelector('img');
-        if (!img) return;
-        var cap = t.getAttribute('data-cap');
-        if (!cap) {
-          var fc = t.querySelector && t.querySelector('figcaption');
-          cap = fc ? fc.textContent : (img.getAttribute('alt') || '');
-        }
-        open(img.getAttribute('src'), cap);
-      });
+      t.addEventListener('click', function () { open(t); });
     });
+    bprev.addEventListener('click', function (e) { e.stopPropagation(); show(curIdx - 1); });
+    bnext.addEventListener('click', function (e) { e.stopPropagation(); show(curIdx + 1); });
     box.addEventListener('click', function (e) {
       if (e.target === box || e.target.classList.contains('lightbox__close')) close();
     });
     document.addEventListener('keydown', function (e) {
+      if (!box.classList.contains('is-open')) return;
       if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(curIdx - 1);
+      else if (e.key === 'ArrowRight') show(curIdx + 1);
     });
   }
 
   /* ============================ Contact form ========================= */
+  function encodeFormData(data) {
+    return Object.keys(data).map(function (k) {
+      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]);
+    }).join('&');
+  }
+
   function initContactForm() {
     var form = document.getElementById('contact-form');
     if (!form) return;
     var status = document.getElementById('form-status');
     var submit = form.querySelector('button[type="submit"]');
     var submitText = submit ? submit.innerHTML : '';
+    var isNetlifyForm = form.hasAttribute('data-netlify');
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -399,21 +450,30 @@
 
       if (submit) { submit.disabled = true; submit.innerHTML = lang === 'en' ? 'Sending…' : 'Đang gửi…'; }
 
-      fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      })
-        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
+      var req = isNetlifyForm
+        // Website tĩnh (Netlify): gửi qua Netlify Forms (không cần backend)
+        ? fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: encodeFormData(data)
+          }).then(function (r) { if (!r.ok) throw new Error('netlify-form-error'); return { ok: true }; })
+        // Chạy kèm server.js (Node/Express): gửi qua API nội bộ
+        : fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok && j.ok, body: j }; }); });
+
+      req
         .then(function (res) {
-          if (res.ok && res.body.ok) {
+          if (res.ok) {
             status.classList.add('is-ok');
             status.textContent = lang === 'en'
               ? 'Thank you! Your message has been received — we will respond soon.'
               : 'Cảm ơn bạn! Chúng tôi đã nhận thông tin và sẽ phản hồi sớm nhất.';
             form.reset();
           } else {
-            throw new Error(res.body.error || 'error');
+            throw new Error((res.body && res.body.error) || 'error');
           }
         })
         .catch(function () {
