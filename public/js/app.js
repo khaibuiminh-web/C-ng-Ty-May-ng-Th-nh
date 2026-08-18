@@ -18,7 +18,9 @@
     tax: '4300269721',
     since: '1984',
     addressVi: '32 Lê Văn Sỹ, Phường Nghĩa Lộ, TP. Quảng Ngãi, Tỉnh Quảng Ngãi, Việt Nam',
-    addressEn: '32 Le Van Sy St., Nghia Lo Ward, Quang Ngai City, Quang Ngai Province, Vietnam'
+    addressEn: '32 Le Van Sy St., Nghia Lo Ward, Quang Ngai City, Quang Ngai Province, Vietnam',
+    facebook: 'https://www.facebook.com/profile.php?id=61592872725461',
+    tiktok: 'https://www.tiktok.com/@dongthanh.garment'
   };
 
   /* ------------------------- Menu điều hướng -------------------------- */
@@ -145,7 +147,9 @@
     phone: '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/>',
     mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/>',
     clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
-    doc: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>'
+    doc: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>',
+    facebook: '<path d="M15 3h-2a4.5 4.5 0 0 0-4.5 4.5V10H6v3.5h2.5V21H12v-7.5h2.6l.4-3.5H12V7.7c0-.9.4-1.4 1.4-1.4H15V3Z" fill="currentColor" stroke="none"/>',
+    tiktok: '<path d="M15.5 2.5c.4 2.4 1.9 4.1 4.5 4.4v3.3a7.6 7.6 0 0 1-4.5-1.4v6.9a5.9 5.9 0 1 1-5.9-5.9c.3 0 .6 0 .9.1v3.3a2.6 2.6 0 1 0 1.8 2.5V2.5h3.2Z" fill="currentColor" stroke="none"/>'
   };
 
   function buildFooter() {
@@ -169,6 +173,10 @@
             '<p class="footer-about" data-en="Garment manufacturer established in 1999 with over 25 years of operation in Quang Ngai — strategic partner of NOA GROUP, reliable for domestic and export markets.">' +
               'Doanh nghiệp may mặc thành lập năm 1999, hơn 25 năm hoạt động tại Quảng Ngãi — đối tác chiến lược của NOA GROUP, tin cậy cho thị trường trong nước và xuất khẩu.' +
             '</p>' +
+            '<div class="footer-social">' +
+              '<a href="' + CO.facebook + '" target="_blank" rel="noopener" aria-label="Facebook">' + icon(I.facebook) + '</a>' +
+              '<a href="' + CO.tiktok + '" target="_blank" rel="noopener" aria-label="TikTok">' + icon(I.tiktok) + '</a>' +
+            '</div>' +
           '</div>' +
           '<div class="footer">' +
             '<h4 data-en="Navigation">Điều hướng</h4>' +
