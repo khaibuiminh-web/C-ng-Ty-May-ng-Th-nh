@@ -19,7 +19,7 @@
     since: '1984',
     addressVi: '32 Lê Văn Sỹ, Phường Nghĩa Lộ, TP. Quảng Ngãi, Tỉnh Quảng Ngãi, Việt Nam',
     addressEn: '32 Le Van Sy St., Nghia Lo Ward, Quang Ngai City, Quang Ngai Province, Vietnam',
-    addressZh: '越南广义省广义市义露坊黎文谢街32号',
+    addressZh: '越南广义省广义市 Nghia Lo Ward, 32 Le Van Sy St.',
     facebook: 'https://www.facebook.com/profile.php?id=61592872725461',
     tiktok: 'https://www.tiktok.com/@dongthanh.garment'
   };
