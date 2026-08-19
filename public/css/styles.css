@@ -183,7 +183,7 @@ li, figcaption, blockquote { text-wrap: pretty; }
   overflow: hidden; background: var(--color-surface);
 }
 .lang-toggle button {
-  border: 0; background: transparent; cursor: pointer; padding: 6px 12px;
+  border: 0; background: transparent; cursor: pointer; padding: 6px 10px;
   font-family: var(--font-heading); font-weight: 600; font-size: .82rem; color: var(--color-muted-fg);
   transition: background .18s, color .18s;
 }
@@ -726,7 +726,7 @@ body[data-page="profile"] .page-hero h1 { line-height: 1.5; }
   .brand__logo { height: 34px; }
   .brand__name { font-size: .9rem; }
   .brand__tag { font-size: .56rem; letter-spacing: .14em; }
-  .lang-toggle button { padding: 6px 9px; }
+  .lang-toggle button { padding: 6px 7px; font-size: .76rem; }
   /* Nút nổi gọn hơn, không chạm mép */
   .floaters { right: 14px; bottom: 14px; gap: 10px; }
   .floater { width: 48px; height: 48px; }

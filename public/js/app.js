@@ -1,7 +1,7 @@
 /* =============================================================
    DOTHEGAMEX — App JS
    - Header/Footer/Floaters dùng chung (inject 1 nơi, đồng bộ mọi trang)
-   - Song ngữ VI/EN (data-en trên phần tử; lưu localStorage)
+   - Đa ngôn ngữ VI/EN/中文 (data-en, data-zh trên phần tử; lưu localStorage)
    - Mobile menu, scroll reveal, sticky header, form liên hệ
    ============================================================= */
 (function () {
@@ -19,24 +19,25 @@
     since: '1984',
     addressVi: '32 Lê Văn Sỹ, Phường Nghĩa Lộ, TP. Quảng Ngãi, Tỉnh Quảng Ngãi, Việt Nam',
     addressEn: '32 Le Van Sy St., Nghia Lo Ward, Quang Ngai City, Quang Ngai Province, Vietnam',
+    addressZh: '越南广义省广义市义露坊黎文谢街32号',
     facebook: 'https://www.facebook.com/profile.php?id=61592872725461',
     tiktok: 'https://www.tiktok.com/@dongthanh.garment'
   };
 
   /* ------------------------- Menu điều hướng -------------------------- */
   var NAV = [
-    { href: 'index.html',        vi: 'Trang chủ',   en: 'Home',          key: 'home' },
-    { href: 'about.html',        vi: 'Giới thiệu',  en: 'About Us',      key: 'about' },
-    { href: 'capabilities.html', vi: 'Năng lực',    en: 'Capabilities',  key: 'capabilities' },
-    { href: 'profile.html',      vi: 'Hồ sơ năng lực', en: 'Company Profile', key: 'profile' },
-    { href: 'careers.html',      vi: 'Tuyển dụng',  en: 'Careers',       key: 'careers' },
-    { href: 'contact.html',      vi: 'Liên hệ',     en: 'Contact',       key: 'contact' }
+    { href: 'index.html',        vi: 'Trang chủ',   en: 'Home',          zh: '首页',       key: 'home' },
+    { href: 'about.html',        vi: 'Giới thiệu',  en: 'About Us',      zh: '关于我们',    key: 'about' },
+    { href: 'capabilities.html', vi: 'Năng lực',    en: 'Capabilities',  zh: '生产能力',    key: 'capabilities' },
+    { href: 'profile.html',      vi: 'Hồ sơ năng lực', en: 'Company Profile', zh: '企业简介', key: 'profile' },
+    { href: 'careers.html',      vi: 'Tuyển dụng',  en: 'Careers',       zh: '招聘信息',    key: 'careers' },
+    { href: 'contact.html',      vi: 'Liên hệ',     en: 'Contact',       zh: '联系我们',    key: 'contact' }
   ];
 
   var UI = {
-    quote:   { vi: 'Nhận báo giá', en: 'Get a Quote' },
-    apply:   { vi: 'Ứng tuyển ngay', en: 'Apply Now' },
-    hotline: { vi: 'Hotline', en: 'Hotline' }
+    quote:   { vi: 'Nhận báo giá', en: 'Get a Quote', zh: '获取报价' },
+    apply:   { vi: 'Ứng tuyển ngay', en: 'Apply Now', zh: '立即申请' },
+    hotline: { vi: 'Hotline', en: 'Hotline', zh: '热线电话' }
   };
 
   // Logo thật của công ty (file gốc PNG, nền trong suốt). logo.png = bản navy (nền sáng), logo-white.png = bản trắng (nền tối).
@@ -51,21 +52,27 @@
     applyLang(lang);
   }
   function applyLang(lang) {
-    document.documentElement.lang = lang;
+    document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
     // Nội dung văn bản
     document.querySelectorAll('[data-en]').forEach(function (el) {
       if (!el.hasAttribute('data-vi')) el.setAttribute('data-vi', el.innerHTML);
-      el.innerHTML = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-vi');
+      el.innerHTML = lang === 'en' ? el.getAttribute('data-en')
+        : lang === 'zh' ? (el.getAttribute('data-zh') || el.getAttribute('data-en'))
+        : el.getAttribute('data-vi');
     });
     // Placeholder
     document.querySelectorAll('[data-en-ph]').forEach(function (el) {
       if (!el.hasAttribute('data-vi-ph')) el.setAttribute('data-vi-ph', el.getAttribute('placeholder') || '');
-      el.setAttribute('placeholder', lang === 'en' ? el.getAttribute('data-en-ph') : el.getAttribute('data-vi-ph'));
+      el.setAttribute('placeholder', lang === 'en' ? el.getAttribute('data-en-ph')
+        : lang === 'zh' ? (el.getAttribute('data-zh-ph') || el.getAttribute('data-en-ph'))
+        : el.getAttribute('data-vi-ph'));
     });
     // aria-label
     document.querySelectorAll('[data-en-al]').forEach(function (el) {
       if (!el.hasAttribute('data-vi-al')) el.setAttribute('data-vi-al', el.getAttribute('aria-label') || '');
-      el.setAttribute('aria-label', lang === 'en' ? el.getAttribute('data-en-al') : el.getAttribute('data-vi-al'));
+      el.setAttribute('aria-label', lang === 'en' ? el.getAttribute('data-en-al')
+        : lang === 'zh' ? (el.getAttribute('data-zh-al') || el.getAttribute('data-en-al'))
+        : el.getAttribute('data-vi-al'));
     });
     // Nút chuyển ngôn ngữ
     document.querySelectorAll('.lang-toggle button').forEach(function (b) {
@@ -75,7 +82,7 @@
     // Chống "chữ mồ côi": giữ 2 từ cuối mỗi đoạn/tiêu đề dính nhau (chạy lại sau mỗi lần đổi ngôn ngữ)
     preventWidows();
   }
-  function t(obj) { return getLang() === 'en' ? obj.en : obj.vi; }
+  function t(obj) { var lang = getLang(); return lang === 'en' ? obj.en : lang === 'zh' ? obj.zh : obj.vi; }
 
   /* --------- Chống chữ mồ côi (widow) — nối 2 từ cuối bằng non-breaking space --------- */
   function preventWidows() {
@@ -111,7 +118,7 @@
       var is = n.key === active ? ' is-active' : '';
       var aria = n.key === active ? ' aria-current="page"' : '';
       return '<li><a class="nav__link' + is + '" href="' + n.href + '"' + aria +
-        ' data-en="' + n.en + '">' + n.vi + '</a></li>';
+        ' data-en="' + n.en + '" data-zh="' + n.zh + '">' + n.vi + '</a></li>';
     }).join('');
 
     host.className = 'site-header';
@@ -124,14 +131,15 @@
             '<span class="brand__tag">' + CO.tag + '</span></span>' +
           '</a>' +
           '<ul class="nav__links" id="nav-links">' + links +
-            '<li class="nav__cta-mobile"><a class="btn btn--block" href="contact.html" data-en="' + UI.quote.en + '">' + UI.quote.vi + '</a></li>' +
+            '<li class="nav__cta-mobile"><a class="btn btn--block" href="contact.html" data-en="' + UI.quote.en + '" data-zh="' + UI.quote.zh + '">' + UI.quote.vi + '</a></li>' +
           '</ul>' +
           '<div class="nav__actions">' +
-            '<div class="lang-toggle" role="group" aria-label="Language / Ngôn ngữ">' +
+            '<div class="lang-toggle" role="group" aria-label="Language / Ngôn ngữ / 语言">' +
               '<button type="button" data-lang="vi">VI</button>' +
               '<button type="button" data-lang="en">EN</button>' +
+              '<button type="button" data-lang="zh">中</button>' +
             '</div>' +
-            '<a class="btn nav__cta-desktop" href="contact.html" data-en="' + UI.quote.en + '">' + UI.quote.vi + '</a>' +
+            '<a class="btn nav__cta-desktop" href="contact.html" data-en="' + UI.quote.en + '" data-zh="' + UI.quote.zh + '">' + UI.quote.vi + '</a>' +
             '<button class="nav__toggle" id="nav-toggle" aria-label="Mở menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>' +
           '</div>' +
         '</nav>' +
@@ -162,7 +170,7 @@
       var is = n.key === activePage ? ' is-active' : '';
       var aria = n.key === activePage ? ' aria-current="page"' : '';
       return '<li><a class="footer-links__link' + is + '" href="' + n.href + '"' + aria +
-        ' data-en="' + n.en + '">' + n.vi + '</a></li>';
+        ' data-en="' + n.en + '" data-zh="' + n.zh + '">' + n.vi + '</a></li>';
     }).join('');
 
     host.className = 'site-footer';
@@ -173,8 +181,8 @@
             '<a class="brand" href="index.html">' + LOGO_WHITE +
               '<span><span class="brand__name">' + CO.brand + '</span><span class="brand__tag">' + CO.tag + '</span></span>' +
             '</a>' +
-            '<p class="footer-slogan" data-en="Where the craft of needle and thread is preserved and honored.">Nơi nghề kim chỉ được giữ gìn và trân trọng.</p>' +
-            '<p class="footer-about" data-en="Garment manufacturer established in 1999 with over 25 years of operation in Quang Ngai — strategic partner of NOA GROUP, reliable for domestic and export markets.">' +
+            '<p class="footer-slogan" data-en="Where the craft of needle and thread is preserved and honored." data-zh="在这里,针线的手艺被珍视与传承。">Nơi nghề kim chỉ được giữ gìn và trân trọng.</p>' +
+            '<p class="footer-about" data-en="Garment manufacturer established in 1999 with over 25 years of operation in Quang Ngai — strategic partner of NOA GROUP, reliable for domestic and export markets." data-zh="成立于1999年的服装制造商,在广义省运营超过25年——NOA GROUP的战略合作伙伴,国内及出口市场值得信赖的伙伴。">' +
               'Doanh nghiệp may mặc thành lập năm 1999, hơn 25 năm hoạt động tại Quảng Ngãi — đối tác chiến lược của NOA GROUP, tin cậy cho thị trường trong nước và xuất khẩu.' +
             '</p>' +
             '<div class="footer-social">' +
@@ -183,33 +191,33 @@
             '</div>' +
           '</div>' +
           '<div class="footer">' +
-            '<h4 data-en="Navigation">Điều hướng</h4>' +
+            '<h4 data-en="Navigation" data-zh="导航">Điều hướng</h4>' +
             '<ul class="footer-links">' + quick + '</ul>' +
           '</div>' +
           '<div class="footer">' +
-            '<h4 data-en="Company">Công ty</h4>' +
+            '<h4 data-en="Company" data-zh="公司">Công ty</h4>' +
             '<ul class="footer-links">' +
-              '<li><span style="color:#94a3b8" data-en="Tax code">Mã số thuế</span>: ' + CO.tax + '</li>' +
-              '<li><span style="color:#94a3b8" data-en="Main line">Ngành chính</span>: ' + '<span data-en="Made-up textiles (excl. apparel)">Sản xuất hàng dệt sẵn (trừ trang phục)</span></li>' +
-              '<li><span style="color:#94a3b8" data-en="Heritage">Bề dày</span>: ' + '<span data-en="25+ years (since 1999)">Hơn 25 năm (từ 1999)</span></li>' +
-              '<li><span style="color:#94a3b8" data-en="Strategic partner">Đối tác chiến lược</span>: NOA GROUP</li>' +
-              '<li><a href="capabilities.html" data-en="OEM / CMT Services">Dịch vụ OEM / CMT</a></li>' +
-              '<li><a href="careers.html" data-en="Recruitment">Tuyển dụng</a></li>' +
+              '<li><span style="color:#94a3b8" data-en="Tax code" data-zh="税号">Mã số thuế</span>: ' + CO.tax + '</li>' +
+              '<li><span style="color:#94a3b8" data-en="Main line" data-zh="主营业务">Ngành chính</span>: ' + '<span data-en="Made-up textiles (excl. apparel)" data-zh="成品纺织品制造(不含服装)">Sản xuất hàng dệt sẵn (trừ trang phục)</span></li>' +
+              '<li><span style="color:#94a3b8" data-en="Heritage" data-zh="历史沿革">Bề dày</span>: ' + '<span data-en="25+ years (since 1999)" data-zh="25年以上(自1999年起)">Hơn 25 năm (từ 1999)</span></li>' +
+              '<li><span style="color:#94a3b8" data-en="Strategic partner" data-zh="战略合作伙伴">Đối tác chiến lược</span>: NOA GROUP</li>' +
+              '<li><a href="capabilities.html" data-en="OEM / CMT Services" data-zh="OEM/CMT加工服务">Dịch vụ OEM / CMT</a></li>' +
+              '<li><a href="careers.html" data-en="Recruitment" data-zh="招聘信息">Tuyển dụng</a></li>' +
             '</ul>' +
           '</div>' +
           '<div class="footer">' +
-            '<h4 data-en="Contact">Liên hệ</h4>' +
+            '<h4 data-en="Contact" data-zh="联系我们">Liên hệ</h4>' +
             '<ul class="footer-contact">' +
-              '<li>' + icon(I.pin) + '<span data-en="' + CO.addressEn + '">' + CO.addressVi + '</span></li>' +
+              '<li>' + icon(I.pin) + '<span data-en="' + CO.addressEn + '" data-zh="' + CO.addressZh + '">' + CO.addressVi + '</span></li>' +
               '<li>' + icon(I.phone) + '<a href="tel:' + CO.phoneRaw + '">' + CO.phone + '</a></li>' +
               '<li>' + icon(I.mail) + '<a href="mailto:' + CO.email + '">' + CO.email + '</a></li>' +
-              '<li>' + icon(I.clock) + '<span data-en="Mon–Sat: 7:30 – 16:30">Thứ 2–7: 7:30 – 16:30</span></li>' +
+              '<li>' + icon(I.clock) + '<span data-en="Mon–Sat: 7:30 – 16:30" data-zh="周一至周六:7:30 – 16:30">Thứ 2–7: 7:30 – 16:30</span></li>' +
             '</ul>' +
           '</div>' +
         '</div>' +
         '<div class="footer-bottom">' +
-          '<span>© ' + year + ' ' + CO.name + '. <span data-en="All rights reserved.">Bảo lưu mọi quyền.</span></span>' +
-          '<span data-en="Design system: Trust &amp; Authority">Thiết kế theo chuẩn Trust &amp; Authority</span>' +
+          '<span>© ' + year + ' ' + CO.name + '. <span data-en="All rights reserved." data-zh="版权所有。">Bảo lưu mọi quyền.</span></span>' +
+          '<span data-en="Design system: Trust &amp; Authority" data-zh="设计系统:信任与权威">Thiết kế theo chuẩn Trust &amp; Authority</span>' +
         '</div>' +
       '</div>';
   }
