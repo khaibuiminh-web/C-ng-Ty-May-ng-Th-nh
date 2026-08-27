@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dongthanh.example.com/sitemap.xml
+Sitemap: https://dongthanhgarment.netlify.app/sitemap.xml
