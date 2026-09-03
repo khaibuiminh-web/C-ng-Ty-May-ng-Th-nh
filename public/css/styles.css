@@ -623,6 +623,11 @@ body[data-page="profile"] .page-hero h1 { line-height: 1.5; }
 .cert-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cert-thumb figcaption { position: absolute; inset: auto 0 0 0; background: linear-gradient(transparent, rgba(2,6,23,.85)); color: #fff; font-family: var(--font-heading); font-weight: 600; font-size: .78rem; padding: 22px 12px 9px; }
 
+/* Thẻ nhỏ "xem chứng nhận" gắn kèm wrap-badge */
+.wrap-cert-mini { max-width: 200px; margin-top: var(--space-4); }
+.wrap-cert-mini figcaption { font-size: .68rem; line-height: 1.35; padding: 26px 10px 8px; }
+@media (max-width: 720px) { .wrap-cert-mini { margin-inline: auto; } }
+
 /* Thư viện dạng mosaic (1 ảnh lớn nổi bật + ảnh nhỏ) — desktop */
 @media (min-width: 900px) {
   .cert-gallery.gallery-mosaic { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 205px; }
