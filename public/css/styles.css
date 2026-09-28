@@ -765,10 +765,10 @@ body[data-page="profile"] .page-hero h1 { line-height: 1.5; }
 /* --------------------------- Slogan band ------------------------- */
 .slogan-band { background: var(--color-primary); color: #fff; text-align: center; padding-block: var(--space-8); }
 .slogan-band .slogan-brand { display: block; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: .28em; font-size: .78rem; font-weight: 600; color: #C9A45C; margin-bottom: var(--space-3); }
-.slogan-quote { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 400; font-size: clamp(1.35rem, 3.2vw, 2.1rem); line-height: 1.45; max-width: 26ch; margin-inline: auto; color: #fff; text-wrap: balance; }
+.slogan-quote { font-family: var(--font-heading); font-weight: 500; font-style: italic; font-weight: 400; font-size: clamp(1.35rem, 3.2vw, 2.1rem); line-height: 1.45; max-width: 26ch; margin-inline: auto; color: #fff; text-wrap: balance; }
 .slogan-band .slogan-quote::before { content: "“"; color: #C9A45C; }
 .slogan-band .slogan-quote::after { content: "”"; color: #C9A45C; }
-.footer-slogan { font-family: Georgia, 'Times New Roman', serif; font-style: italic; color: #d3b985; font-size: 1.02rem; line-height: 1.5; margin: var(--space-2) 0 var(--space-3); }
+.footer-slogan { font-family: var(--font-heading); font-weight: 500; font-style: italic; color: #d3b985; font-size: 1.02rem; line-height: 1.5; margin: var(--space-2) 0 var(--space-3); }
 
 /* --------------------------- Print ------------------------------- */
 @media print {
