@@ -947,3 +947,7 @@ h2 { letter-spacing: -0.025em; }
 .cta-phone b { font-family: var(--font-heading); font-size: 1.25rem; letter-spacing: .02em; }
 .cta-phone:hover { border-color: var(--color-gold-light); background: rgba(230,194,94,.08); transform: translateY(-2px); }
 .cta-note { margin-top: var(--space-4); font-size: .9rem; color: #94a3b8; }
+
+/* Ảnh bìa trang Tuyển dụng: khung cao hơn để thấy trọn người và máy */
+@media (min-width: 769px) { .page-hero--tall { min-height: min(62vw, 640px); display: flex; align-items: center; } .page-hero--tall > .container { width: 100%; } }
+@media (min-width: 769px) { .page-hero--tall h1 { max-width: 12.5em; } .page-hero--tall p { max-width: 34em; } }
