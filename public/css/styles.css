@@ -980,3 +980,14 @@ h2 { letter-spacing: -0.025em; }
 @media (min-width:769px){.page-hero--side::before{background:linear-gradient(90deg,rgba(7,17,31,.92) 0%,rgba(11,25,44,.72) 40%,rgba(11,25,44,.30) 72%,rgba(11,25,44,.18) 100%)}}
 @media (max-width:768px){.page-hero--side{background-image:url('../assets/img/covers/careers.webp?v=5')!important;background-position:60% 0%!important}}
 @media (min-width:769px) and (max-width:1199px){.page-hero--side::before{background:linear-gradient(90deg,rgba(7,17,31,.95) 0%,rgba(11,25,44,.86) 52%,rgba(11,25,44,.45) 82%,rgba(11,25,44,.3) 100%)}}
+
+/* ---- Careers: hotline cong ty tach rieng, nho hon so tuyen dung ---- */
+.cta-hotline{display:inline-flex;align-items:baseline;gap:10px;margin-top:var(--space-5);padding-top:var(--space-4);border-top:1px solid rgba(255,255,255,.12);color:#cbd5e1;text-decoration:none}
+.cta-hotline span{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#94a3b8}
+.cta-hotline b{font-family:var(--font-heading);font-size:1.05rem;color:#fff}
+.cta-hotline:hover b{color:var(--color-gold-light)}
+.cta-band .cta-note{margin-top:var(--space-2)}
+/* ---- Ban do 2 xuong: an khung anh noi tren dien thoai ---- */
+@media (max-width:760px){.loc-pop{display:none!important}}
+.cta-hotline span{white-space:nowrap}
+@media (max-width:480px){.cta-hotline{flex-direction:column;align-items:center;gap:2px}}
