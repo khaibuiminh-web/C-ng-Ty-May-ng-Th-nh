@@ -217,7 +217,7 @@
         '</div>' +
         '<div class="footer-bottom">' +
           '<span>© ' + year + ' ' + CO.name + '. <span data-en="All rights reserved." data-zh="版权所有。">Bảo lưu mọi quyền.</span></span>' +
-          '<span data-en="Design system: Trust &amp; Authority" data-zh="设计系统:信任与权威">Thiết kế theo chuẩn Trust &amp; Authority</span>' +
+          '<span data-en="Tax code 4300269721" data-zh="税号 4300269721">MST 4300269721</span>' +
         '</div>' +
       '</div>';
   }
