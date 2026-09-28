@@ -939,3 +939,11 @@ h2 { letter-spacing: -0.025em; }
 .markets-sec .market:hover { border-color: var(--color-gold); }
 ::selection { background: #E9D9B5; color: var(--color-primary); }
 .btn--outline-light { --btn-bg: transparent; --btn-fg: #fff; box-shadow: none; }
+
+/* Số tuyển dụng từng xí nghiệp (trang Tuyển dụng) */
+.cta-phones { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-4); margin-top: var(--space-6); }
+.cta-phone { display: flex; flex-direction: column; align-items: center; gap: 2px; min-width: 220px; padding: 12px 22px; border-radius: var(--radius); border: 1px solid rgba(230,194,94,.35); background: rgba(255,255,255,.04); color: #fff; text-decoration: none; transition: border-color .25s, background .25s, transform .25s var(--ease); }
+.cta-phone span { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--color-gold-light); }
+.cta-phone b { font-family: var(--font-heading); font-size: 1.25rem; letter-spacing: .02em; }
+.cta-phone:hover { border-color: var(--color-gold-light); background: rgba(230,194,94,.08); transform: translateY(-2px); }
+.cta-note { margin-top: var(--space-4); font-size: .9rem; color: #94a3b8; }
