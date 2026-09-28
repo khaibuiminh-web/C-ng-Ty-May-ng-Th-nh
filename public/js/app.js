@@ -29,7 +29,6 @@
     { href: 'index.html',        vi: 'Trang chủ',   en: 'Home',          zh: '首页',       key: 'home' },
     { href: 'about.html',        vi: 'Giới thiệu',  en: 'About Us',      zh: '关于我们',    key: 'about' },
     { href: 'capabilities.html', vi: 'Năng lực',    en: 'Capabilities',  zh: '生产能力',    key: 'capabilities' },
-    { href: 'profile.html',      vi: 'Hồ sơ năng lực', en: 'Company Profile', zh: '企业简介', key: 'profile' },
     { href: 'careers.html',      vi: 'Tuyển dụng',  en: 'Careers',       zh: '招聘信息',    key: 'careers' },
     { href: 'contact.html',      vi: 'Liên hệ',     en: 'Contact',       zh: '联系我们',    key: 'contact' }
   ];
@@ -203,6 +202,7 @@
               '<li><span style="color:#94a3b8" data-en="Strategic partner" data-zh="战略合作伙伴">Đối tác chiến lược</span>: NOA GROUP</li>' +
               '<li><a href="capabilities.html" data-en="OEM / CMT Services" data-zh="OEM/CMT加工服务">Dịch vụ OEM / CMT</a></li>' +
               '<li><a href="careers.html" data-en="Recruitment" data-zh="招聘信息">Tuyển dụng</a></li>' +
+              '<li><a href="assets/docs/DOTHEGAMEX-Company-Profile.pdf" download data-en="Company Profile (PDF)" data-zh="企业简介(PDF)">Hồ sơ năng lực (PDF)</a></li>' +
             '</ul>' +
           '</div>' +
           '<div class="footer">' +

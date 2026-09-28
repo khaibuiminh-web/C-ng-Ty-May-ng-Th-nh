@@ -4,6 +4,19 @@
   # Không cần build (HTML/CSS/JS thuần), để trống command
   command = ""
 
+# Trang hồ sơ năng lực cũ đã gộp vào trang Năng lực
+[[redirects]]
+  from = "/profile.html"
+  to = "/capabilities.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/profile"
+  to = "/capabilities.html"
+  status = 301
+  force = true
+
 # Trả về trang 404 tùy chỉnh khi không tìm thấy đường dẫn
 [[redirects]]
   from = "/*"
