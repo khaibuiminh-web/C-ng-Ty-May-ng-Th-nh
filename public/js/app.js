@@ -197,7 +197,6 @@
             '<h4 data-en="Company" data-zh="公司">Công ty</h4>' +
             '<ul class="footer-links">' +
               '<li><span style="color:#94a3b8" data-en="Tax code" data-zh="税号">Mã số thuế</span>: ' + CO.tax + '</li>' +
-              '<li><span style="color:#94a3b8" data-en="Main business line" data-zh="主营业务">Ngành chính</span>: ' + '<span data-en="Made-up textiles (excl. apparel)" data-zh="成品纺织品制造(不含服装)">Sản xuất hàng dệt sẵn (trừ trang phục)</span></li>' +
               '<li><span style="color:#94a3b8" data-en="Heritage" data-zh="历史沿革">Bề dày</span>: ' + '<span data-en="25+ years (since 1999)" data-zh="25年以上(自1999年起)">Hơn 25 năm (từ 1999)</span></li>' +
               '<li><span style="color:#94a3b8" data-en="Strategic partner" data-zh="战略合作伙伴">Đối tác chiến lược</span>: NOA GROUP</li>' +
               '<li><a href="capabilities.html" data-en="OEM / CMT Services" data-zh="OEM/CMT加工服务">Dịch vụ OEM / CMT</a></li>' +
