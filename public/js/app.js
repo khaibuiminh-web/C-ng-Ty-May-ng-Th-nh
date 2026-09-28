@@ -182,7 +182,7 @@
               '<span><span class="brand__name">' + CO.brand + '</span><span class="brand__tag">' + CO.tag + '</span></span>' +
             '</a>' +
             '<p class="footer-slogan" data-en="Where the craft of needle and thread is preserved and honored." data-zh="在这里,针线的手艺被珍视与传承。">Nơi nghề kim chỉ được giữ gìn và trân trọng.</p>' +
-            '<p class="footer-about" data-en="Garment manufacturer established in 1999 with over 25 years of operation in Quang Ngai — strategic partner of NOA GROUP, reliable for domestic and export markets." data-zh="成立于1999年的服装制造商,在广义省运营超过25年——NOA GROUP的战略合作伙伴,国内及出口市场值得信赖的伙伴。">' +
+            '<p class="footer-about" data-en="A garment manufacturer in Quang Ngai, established in 1999, with over 25 years of experience. Strategic partner of NOA GROUP, serving domestic and export markets." data-zh="成立于1999年的服装制造商,在广义省运营超过25年——NOA GROUP的战略合作伙伴,国内及出口市场值得信赖的伙伴。">' +
               'Doanh nghiệp may mặc thành lập năm 1999, hơn 25 năm hoạt động tại Quảng Ngãi — đối tác chiến lược của NOA GROUP, tin cậy cho thị trường trong nước và xuất khẩu.' +
             '</p>' +
             '<div class="footer-social">' +
@@ -198,7 +198,7 @@
             '<h4 data-en="Company" data-zh="公司">Công ty</h4>' +
             '<ul class="footer-links">' +
               '<li><span style="color:#94a3b8" data-en="Tax code" data-zh="税号">Mã số thuế</span>: ' + CO.tax + '</li>' +
-              '<li><span style="color:#94a3b8" data-en="Main line" data-zh="主营业务">Ngành chính</span>: ' + '<span data-en="Made-up textiles (excl. apparel)" data-zh="成品纺织品制造(不含服装)">Sản xuất hàng dệt sẵn (trừ trang phục)</span></li>' +
+              '<li><span style="color:#94a3b8" data-en="Main business line" data-zh="主营业务">Ngành chính</span>: ' + '<span data-en="Made-up textiles (excl. apparel)" data-zh="成品纺织品制造(不含服装)">Sản xuất hàng dệt sẵn (trừ trang phục)</span></li>' +
               '<li><span style="color:#94a3b8" data-en="Heritage" data-zh="历史沿革">Bề dày</span>: ' + '<span data-en="25+ years (since 1999)" data-zh="25年以上(自1999年起)">Hơn 25 năm (từ 1999)</span></li>' +
               '<li><span style="color:#94a3b8" data-en="Strategic partner" data-zh="战略合作伙伴">Đối tác chiến lược</span>: NOA GROUP</li>' +
               '<li><a href="capabilities.html" data-en="OEM / CMT Services" data-zh="OEM/CMT加工服务">Dịch vụ OEM / CMT</a></li>' +
@@ -211,7 +211,7 @@
               '<li>' + icon(I.pin) + '<span data-en="' + CO.addressEn + '" data-zh="' + CO.addressZh + '">' + CO.addressVi + '</span></li>' +
               '<li>' + icon(I.phone) + '<a href="tel:' + CO.phoneRaw + '">' + CO.phone + '</a></li>' +
               '<li>' + icon(I.mail) + '<a href="mailto:' + CO.email + '">' + CO.email + '</a></li>' +
-              '<li>' + icon(I.clock) + '<span data-en="Mon–Sat: 7:30 – 16:30" data-zh="周一至周六:7:30 – 16:30">Thứ 2–7: 7:30 – 16:30</span></li>' +
+              '<li>' + icon(I.clock) + '<span data-en="Mon–Sat, 7:30 AM – 4:30 PM (GMT+7)" data-zh="周一至周六:7:30 – 16:30">Thứ 2–7: 7:30 – 16:30</span></li>' +
             '</ul>' +
           '</div>' +
         '</div>' +
