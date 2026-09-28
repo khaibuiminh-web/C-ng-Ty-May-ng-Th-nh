@@ -901,3 +901,8 @@ body[data-page="profile"] .page-hero h1 { line-height: 1.5; }
 }
 @keyframes threadRun { to { background-position: 20px 0; } }
 @media (prefers-reduced-motion: reduce) { .process::before { transition: none; } }
+
+/* ---------------- Sửa tràn ngang dải số liệu trên điện thoại ---------------- */
+.stats-band > .stat { min-width: 0; }
+.stat .lbl { overflow-wrap: break-word; hyphens: auto; }
+@media (max-width: 560px) { .stat { padding: var(--space-4) var(--space-2); } }
