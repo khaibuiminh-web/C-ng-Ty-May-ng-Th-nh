@@ -974,3 +974,9 @@ h2 { letter-spacing: -0.025em; }
 @media (max-width:1100px) and (min-width:761px){.order-terms{grid-template-columns:1fr}}
 .order-terms .order-term{flex-direction:column;align-items:flex-start;gap:14px}
 .order-terms .order-term__num{height:56px;display:flex;align-items:center}
+
+/* ---- Careers hero: anh lech phai, chu nam tren nen navy ---- */
+.page-hero--side{background-color:#0B192C}
+@media (min-width:769px){.page-hero--side::before{background:linear-gradient(90deg,rgba(7,17,31,.92) 0%,rgba(11,25,44,.72) 40%,rgba(11,25,44,.30) 72%,rgba(11,25,44,.18) 100%)}}
+@media (max-width:768px){.page-hero--side{background-image:url('../assets/img/covers/careers.webp?v=5')!important;background-position:60% 0%!important}}
+@media (min-width:769px) and (max-width:1199px){.page-hero--side::before{background:linear-gradient(90deg,rgba(7,17,31,.95) 0%,rgba(11,25,44,.86) 52%,rgba(11,25,44,.45) 82%,rgba(11,25,44,.3) 100%)}}
