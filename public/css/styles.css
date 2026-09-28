@@ -951,3 +951,11 @@ h2 { letter-spacing: -0.025em; }
 /* Ảnh bìa trang Tuyển dụng: khung cao hơn để thấy trọn người và máy */
 @media (min-width: 769px) { .page-hero--tall { min-height: min(62vw, 640px); display: flex; align-items: center; } .page-hero--tall > .container { width: 100%; } }
 @media (min-width: 769px) { .page-hero--tall h1 { max-width: 12.5em; } .page-hero--tall p { max-width: 34em; } }
+
+/* Mục Áo khoác kỹ thuật: bố cục dàn đều */
+.tech-points--row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin: 0 0 var(--space-7); }
+.tech-points--row li { justify-content: center; text-align: center; border-left: 0; border-top: 3px solid var(--color-gold); border-radius: 0 0 var(--radius-sm) var(--radius-sm); padding: var(--space-4); }
+.tech-grid--even { grid-template-columns: repeat(4, 1fr); gap: var(--space-5); }
+.tech-grid--even figure { aspect-ratio: 4 / 3; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); }
+.tech-grid--even figcaption { font-size: .92rem; padding: 36px 14px 12px; }
+@media (max-width: 900px) { .tech-points--row { grid-template-columns: 1fr; } .tech-grid--even { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); } }
